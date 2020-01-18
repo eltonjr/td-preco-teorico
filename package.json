@@ -1,0 +1,14 @@
+{
+  "name": "td-preco-teorico",
+  "version": "1.0.0",
+  "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
+  "main": "theoretical.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eltonhnjr@gmail.com",
+  "license": "MPL 2",
+  "devDependencies": {
+    "web-ext": "^4.0.0"
+  }
+}

@@ -4,7 +4,7 @@
   "version": "1.0",
   "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
   "icons": {
-    "64": "td-icon-64.png"
+    "64": "assets/td-icon-64.png"
   },
   "developer": {
     "name": "Elton Hoffmann",
