@@ -18,6 +18,14 @@
       "js": [
         "theoretical.js"
       ]
+    },
+    {
+      "matches": [
+        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Titulo/*"
+      ],
+      "js": [
+        "retriever.js"
+      ]
     }
   ]
 }
