@@ -5,10 +5,12 @@
 "use strict";
 
 const theoreticalGetter = new RegExp('JSON\.parse\(\((.*)\)\);');
-const details = document.getElementsByClassName("td-posicao-detalhada__info__link");
-for (let i = 0; i < details.length; ++i) {
-  let detail = details[i];
-  let href = detail.getAttribute("href");
+const rows = document.getElementsByClassName("td-posicao-detalhada__info");
+for (let i = 0; i < rows.length; ++i) {
+  let row = rows[i];
+  let detailsLink = row.lastElementChild;
+  
+  let href = detailsLink.getAttribute("href");
   let res = content.fetch(href, {
     credentials: 'same-origin'
   });
@@ -27,24 +29,9 @@ for (let i = 0; i < details.length; ++i) {
 
         const lastTheoreticalPrice = data[data.length-1].TheoreticalPrice;
         console.log(lastTheoreticalPrice);
-        appendToRow(lastTheoreticalPrice);
+        appendToTitleRow(row, lastTheoreticalPrice);
       }
     })
     .catch(e => console.error(e));
-}
-
-function appendToRow(value) {
-  const p = document.createElement('p');
-  p.setAttribute("class", 'td-posicao-detalhada__info__valor');
-  p.appendChild(document.createTextNode("Valor teórico bruto"));
-
-  const span = document.createElement('span');
-  span.setAttribute("class", 'td-posicao-detalhada__info__data');
-  span.appendChild(document.createTextNode(`R$ ${value}`));
-
-  p.appendChild(span);
-
-  let row = document.querySelector('.td-posicao-detalhada__info');
-  row.insertBefore(p, row.lastElementChild);
 }
 
