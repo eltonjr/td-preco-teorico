@@ -23,7 +23,6 @@ for (let i = 0; i < rows.length; ++i) {
 		.then(t => {
 			const lastTheoreticalPrice = extractTheoreticalPrice(t);
 			if (lastTheoreticalPrice) {
-				console.log(lastTheoreticalPrice);
 				return lastTheoreticalPrice;
 			}
 		})
