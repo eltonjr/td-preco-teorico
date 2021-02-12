@@ -4,6 +4,8 @@
 
 "use strict";
 
+let rowsPromises = [];
+
 const rows = document.getElementsByClassName("td-posicao-detalhada__info");
 for (let i = 0; i < rows.length; ++i) {
 	let row = rows[i];
@@ -26,6 +28,15 @@ for (let i = 0; i < rows.length; ++i) {
 			}
 		})
 		.catch(e => console.error(e));
+	rowsPromises.push(res);
 	appendToTitleRow(row, res);
 }
+
+const balancePromise = Promise.all(rowsPromises).then(v => {
+	return v
+		.map(s => parseFloat(s, 2))
+		.reduce((a, b) => { return a + b; }, 0)
+		.toFixed(2);
+});
+appendToTitleTop(balancePromise);
 
