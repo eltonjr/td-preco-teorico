@@ -38,3 +38,22 @@ function appendToTitleRow(row, promise) {
 		text.textContent = `R$${value}`;
 	});
 }
+
+function appendToTitleTop(promise) {
+	const span1 = document.createElement("span");
+	span1.setAttribute("class", "td-meu-investimento-titulo--valor");
+	span1.appendChild(document.createTextNode("Valor teórico bruto"));
+
+	const span2 = document.createElement("span");
+	span2.setAttribute("class", "td-meu-investimento-titulo--cifrao");
+	const text = document.createTextNode("Processando");
+	span2.appendChild(text);
+
+	span1.appendChild(span2);
+
+	document.querySelector(".td-meu-investimento-datalhe-posicao").appendChild(span1);
+
+	promise.then(value => {
+		text.textContent = `R$${value}`;
+	});
+}
