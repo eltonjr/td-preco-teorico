@@ -2,6 +2,8 @@
 
 Esta é uma extensão para Firefox que exibe o preço teórico de um investimento no Tesouro Direto
 
+[Add-on link](https://addons.mozilla.org/en-US/firefox/addon/td-preco-teorico/)
+
 ## Motivação
 
 Para quem não pretende vender seu título antes da data de vencimento, não é necessário acompanhar o valor de mercado de cada título, e sim seu crescimento de acordo com a taxa acordada no momento da compra. Este valor é chamado de "Preço teórico do investimento", segundo o Tesouro Direto.
