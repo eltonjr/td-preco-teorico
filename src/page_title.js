@@ -15,7 +15,7 @@ for (let i = 0; i < rows.length; ++i) {
 	}
 
 	let res = content.fetch(href, {
-		credentials: 'same-origin'
+		credentials: "same-origin"
 	});
 	res = res.then(r => r.text())
 		.then(t => {

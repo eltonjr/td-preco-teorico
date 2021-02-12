@@ -4,7 +4,7 @@
 
 "use strict";
 
-const theoreticalGetter = new RegExp('JSON\.parse\(\((.*)\)\);');
+const theoreticalGetter = new RegExp("JSON\.parse\(\((.*)\)\);");
 
 function extractTheoreticalPrice(script) {
 	const theoreticalGets = script.match(theoreticalGetter);
