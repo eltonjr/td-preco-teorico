@@ -9,15 +9,29 @@ No entanto, o portal do investidor do Tesouro Direto não mostra este *preço te
 
 ## Funcionamento
 
-Atualmente, todos os valores dos investimentos do Tesouro Direto vêm dentro do html inicial da página de Detalhes do título, sem precisar de nenhuma requisição ajax. A única forma de pegar esse valor é encontrando ele dentro do html da página.
+Atualmente, todos os valores dos investimentos do Tesouro Direto vêm dentro do html inicial da página de Detalhes do título, sem precisar de nenhuma requisição ajax. O que essa extensão faz é extrair o dado de dentro do html e exibi-lo.
 
-**Exemplo de página antes**
+## Exemplos
 
-![antes](assets/example-before.png)
+### Página de Detalhes do Título
 
-**Exemplo da página depois**
+**Antes**
 
-![depois](assets/example-after.png)
+![detalhes-antes](assets/example-details-before.png)
+
+**Depois**
+
+![detalhes-depois](assets/example-details-after.png)
+
+### Página de um Título
+
+**Antes**
+
+![titulos-antes](assets/example-titles-before.png)
+
+**Depois**
+
+![titulos-depois](assets/example-titles-after.png)
 
 ## Contribuindo com o projeto
 
