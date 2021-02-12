@@ -21,15 +21,20 @@ function appendToDetailsBody(value) {
 	document.querySelector('.td-meu-investimento').appendChild(h2);
 }
 
-function appendToTitleRow(row, value) {
+function appendToTitleRow(row, promise) {
 	const p = document.createElement('p');
 	p.setAttribute("class", 'td-posicao-detalhada__info__valor');
 	p.appendChild(document.createTextNode("Valor teórico bruto"));
 
 	const span = document.createElement('span');
-	span.appendChild(document.createTextNode(`R$${value}`));
+	const text = document.createTextNode("Processando");
+	span.appendChild(text);
 
 	p.appendChild(span);
 
 	row.insertBefore(p, row.lastElementChild);
+
+	promise.then(value => {
+		text.textContent = `R$${value}`;
+	});
 }

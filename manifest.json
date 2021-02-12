@@ -16,9 +16,9 @@
         "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Detalhe/*"
       ],
       "js": [
-        "src/page_details.js",
         "src/dom.js",
-        "src/theoretical.js"
+        "src/theoretical.js",
+        "src/page_details.js"
       ]
     },
     {
@@ -26,9 +26,9 @@
         "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Titulo/*"
       ],
       "js": [
-        "src/page_title.js",
         "src/dom.js",
-        "src/theoretical.js"
+        "src/theoretical.js",
+        "src/page_title.js"
       ]
     }
   ]

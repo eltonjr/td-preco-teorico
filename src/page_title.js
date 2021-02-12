@@ -10,17 +10,22 @@ for (let i = 0; i < rows.length; ++i) {
 	let detailsLink = row.lastElementChild;
 	
 	let href = detailsLink.getAttribute("href");
+	if (!href) {
+		continue;
+	}
+
 	let res = content.fetch(href, {
 		credentials: 'same-origin'
 	});
-	res.then(r => r.text())
+	res = res.then(r => r.text())
 		.then(t => {
 			const lastTheoreticalPrice = extractTheoreticalPrice(t);
 			if (lastTheoreticalPrice) {
 				console.log(lastTheoreticalPrice);
-				appendToTitleRow(row, lastTheoreticalPrice);
+				return lastTheoreticalPrice;
 			}
 		})
 		.catch(e => console.error(e));
+	appendToTitleRow(row, res);
 }
 
