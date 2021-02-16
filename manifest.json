@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "td-preco-teorico",
-  "version": "1.1",
-  "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
+  "name": "td-preco-teorico (beta)",
+  "version": "1.2",
+  "description": "Exibe o preço teórico de um investimento no Tesouro Direto (Beta)",
   "icons": {
     "64": "assets/td-icon-64.png"
   },
@@ -29,6 +29,16 @@
         "src/dom.js",
         "src/theoretical.js",
         "src/page_title.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos"
+      ],
+      "js": [
+        "src/dom.js",
+        "src/theoretical.js",
+        "src/page_main.js"
       ]
     }
   ]

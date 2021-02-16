@@ -57,3 +57,35 @@ function appendToTitleTop(promise) {
 		text.textContent = `R$${value}`;
 	});
 }
+
+function appendToMainRow(row, promise) {
+	const div = document.createElement("div");
+	const span1 = document.createElement("span");
+	span1.appendChild(document.createTextNode("Valor teórico bruto"));
+
+	const p = document.createElement("p");
+	p.setAttribute("class", "td-card-simples__valor");
+
+	const span2 = document.createElement("span");
+	span2.setAttribute("class", "td-card-simples__valor--cifrao");
+	span2.appendChild(document.createTextNode("R$"));
+
+	p.appendChild(span2);
+
+	const span3 = document.createElement("span");
+	const text = document.createTextNode("Processando");
+	span3.appendChild(text);
+
+	p.appendChild(span3);
+
+	div.appendChild(span1);
+	div.appendChild(p);
+
+	row
+		.querySelector(".td-card-simples-valores div")
+		.appendChild(div);
+
+	promise.then(value => {
+		text.textContent = `${value}`;
+	});
+}

@@ -21,3 +21,42 @@ function extractTheoreticalPrice(script) {
 		return data[data.length-1].TheoreticalPrice;
 	}
 }
+
+function extractTheoreticalPriceFromTitlePage(doc, appendToRows) {
+	let rowsPromises = [];
+
+	const rows = doc.getElementsByClassName("td-posicao-detalhada__info");
+	for (let i = 0; i < rows.length; ++i) {
+		let row = rows[i];
+		let detailsLink = row.lastElementChild;
+
+		let href = detailsLink.getAttribute("href");
+		if (!href) {
+			continue;
+		}
+
+		let res = content.fetch(href, {
+			credentials: "same-origin"
+		});
+		res = res.then(r => r.text())
+			.then(t => {
+				const lastTheoreticalPrice = extractTheoreticalPrice(t);
+				if (lastTheoreticalPrice) {
+					return lastTheoreticalPrice;
+				}
+			})
+			.catch(e => console.error(e));
+		rowsPromises.push(res);
+
+		if (appendToRows) {
+			appendToTitleRow(row, res);
+		}
+	}
+
+	return Promise.all(rowsPromises).then(v => {
+		return v
+			.map(s => parseFloat(s, 2))
+			.reduce((a, b) => { return a + b; }, 0)
+			.toFixed(2);
+	});
+}
