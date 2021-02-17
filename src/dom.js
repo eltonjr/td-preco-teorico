@@ -95,6 +95,8 @@ function color(title) {
 		return "#e4572e";
 	} else if (title.includes("SELIC")) {
 		return "#4b3f72";
+	} else if (title.includes("IGP-M")) {
+		return "#ffc914";
 	} else {
 		return "#119da4";
 	}
