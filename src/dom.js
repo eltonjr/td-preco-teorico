@@ -61,7 +61,7 @@ function appendToTitleTop(promise) {
 function appendToMainRow(row, promise) {
 	const div = document.createElement("div");
 	const span1 = document.createElement("span");
-	span1.appendChild(document.createTextNode("Valor teórico bruto"));
+	span1.appendChild(document.createTextNode("Valor teórico"));
 
 	const p = document.createElement("p");
 	p.setAttribute("class", "td-card-simples__valor");
@@ -88,4 +88,117 @@ function appendToMainRow(row, promise) {
 	promise.then(value => {
 		text.textContent = `${value}`;
 	});
+}
+
+function color(title) {
+	if (title.includes("IPCA")) {
+		return "#e4572e";
+	} else if (title.includes("SELIC")) {
+		return "#4b3f72";
+	} else {
+		return "#119da4";
+	}
+}
+
+function appendToMainTop(rowsData) {
+	const byTitle = Object.values(rowsData)
+		.reduce((a, b) => { 
+			a[b.title] = a[b.title] || [];
+			a[b.title].push(b.promise);
+			return a;
+		}, {});
+
+	const titleHeader = buildTitleHeader(byTitle);
+
+	const div = document.createElement("div");
+	div.setAttribute("class", "td-investimentos-charts");
+
+	const ul = document.createElement("ul");
+	ul.setAttribute("class", "td-graph-list");
+	ul.setAttribute("style", "width: 60%;");
+
+	Object.keys(byTitle).forEach(title => {
+		const li = document.createElement("li");
+		li.setAttribute("onclick", "event.preventDefault();");
+		const span1 = document.createElement("span");
+		span1.setAttribute("class", "td-graph-list__item");
+
+		const span2 = document.createElement("span");
+		span2.setAttribute("class", "td-graph-list__icon");
+		span2.setAttribute("style", `background-color:${color(title)};`);
+
+		const titleNameSpan = document.createElement("span");
+		titleNameSpan.setAttribute("style", "font-size: 1.6rem;");
+		const titleName = document.createTextNode(title);
+		titleNameSpan.appendChild(titleName);
+
+		const span3 = document.createElement("span");
+		span3.setAttribute("class", "td-graph-list__valor");
+		span3.setAttribute("data-gross-amount", "Processando");
+		const titleValue = document.createTextNode("Processando");
+		span3.appendChild(titleValue);
+
+		span1.appendChild(span2);
+		span1.appendChild(titleNameSpan);
+		span1.appendChild(span3);
+
+		li.appendChild(span1);
+		ul.appendChild(li);
+
+		Promise.all(byTitle[title]).then(v => {
+			const sum = v
+				.map(s => parseFloat(s, 2))
+				.reduce((a, b) => { return a + b; }, 0)
+				.toFixed(2);
+			span3.setAttribute("data-gross-amount", sum);
+			span3.innerHTML = "";
+			span3.appendChild(titleValue);
+			titleValue.textContent = sum;
+		});
+	});
+
+	div.appendChild(ul);
+
+	document.querySelector(".td-investimentos-resumo-box").appendChild(titleHeader);
+	document.querySelector(".td-investimentos-resumo-box").appendChild(div);
+}
+
+function buildTitleHeader(byTitle) {
+	const titleDiv = document.createElement("div");
+	titleDiv.setAttribute("class", "td-meus-investimentos");
+	const titleDiv2 = document.createElement("div");
+	titleDiv2.setAttribute("class", "td-meus-investimentos__valor-bruto");
+	const titleP = document.createElement("p");
+	titleP.setAttribute("class", "td-meus-investimentos__titulo");
+	titleP.appendChild(document.createTextNode("Valor teórico total"));
+	const titlePDiv = document.createElement("div");
+	titlePDiv.setAttribute("class", "td-meus-investimentos__valor-box");
+	const titleSign = document.createElement("span");
+	titleSign.setAttribute("class", "td-meus-investimentos__cifrao");
+	titleSign.appendChild(document.createTextNode("R$"));
+	const totalValue = document.createElement("span");
+	totalValue.setAttribute("class", "td-meus-investimentos__valor");
+	totalValue.setAttribute("data-gross-amount", "Processando");
+	const totalValueText = document.createTextNode("Processando");
+	totalValue.appendChild(totalValueText);
+
+	titlePDiv.appendChild(titleSign);
+	titlePDiv.appendChild(totalValue);
+	
+	titleDiv2.appendChild(titleP);
+	titleDiv2.appendChild(titlePDiv);
+	titleDiv.appendChild(titleDiv2);
+
+	Promise.all(Object.values(byTitle).reduce((a, b) => [].concat(a, b), [])).then(v => {
+		const sum = v
+			.map(s => parseFloat(s, 2))
+			.reduce((a, b) => { return a + b; }, 0)
+			.toFixed(2);
+		totalValue.setAttribute("data-gross-amount", sum);
+		totalValue.innerHTML = "";
+		totalValue.appendChild(totalValueText);
+		totalValueText.textContent = sum;
+	});
+
+	return titleDiv;
 }

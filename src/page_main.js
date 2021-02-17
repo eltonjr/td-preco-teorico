@@ -4,7 +4,11 @@
 
 "use strict";
 
-const rowsElems = {};
+const rowsData = {};
+
+function trimTitle(t) {
+	return t.split("\n").map(s => s.trim()).filter(s => s).join(" ")
+}
 
 const rowBoxes = document.getElementsByClassName("td-cards-simples-box");
 for (let i = 0; i < rowBoxes.length; ++i) {
@@ -13,15 +17,14 @@ for (let i = 0; i < rowBoxes.length; ++i) {
 	for (let j = 0; j < rows.length; ++j) {
 		const row = rows[j];
 		const href = row.getAttribute("href");
-		rowsElems[href] = rowsElems[href] || [];
-		rowsElems[href].push(row);
+		const title = trimTitle(row.querySelector("h2").innerText);
+		rowsData[href] = rowsData[href] || { title: title, elems: [], promise: null };
+		rowsData[href].elems.push(row);
 	}
 }
 
-// url -> promise
-const rowsPromises = [];
 const parser = new DOMParser();
-Object.keys(rowsElems).forEach(href => {
+Object.keys(rowsData).forEach(href => {
 	let res = content.fetch(href, {
 		credentials: "same-origin"
 	});
@@ -32,14 +35,9 @@ Object.keys(rowsElems).forEach(href => {
 			return extractTheoreticalPriceFromTitlePage(doc, false);
 		})
 		.catch(e => console.error(e));
-	rowsPromises.push(res);
-	
-	rowsElems[href].forEach(row => appendToMainRow(row, res));
+
+	rowsData[href].promise = res;
+	rowsData[href].elems.forEach(row => appendToMainRow(row, res));
 });
 
-Promise.all(rowsPromises).then(v => {
-	return v
-		.map(s => parseFloat(s, 2))
-		.reduce((a, b) => { return a + b; }, 0)
-		.toFixed(2);
-});
+appendToMainTop(rowsData);
