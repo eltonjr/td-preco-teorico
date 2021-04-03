@@ -5,4 +5,4 @@
 "use strict";
 
 const balancePromise = extractTheoreticalPriceFromTitlePage(document, true);
-appendToTitleTop(balancePromise);
+//appendToTitleTop(balancePromise);

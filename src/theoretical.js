@@ -5,6 +5,7 @@
 "use strict";
 
 const theoreticalGetter = new RegExp("JSON\.parse\(\((.*)\)\);");
+const onclickActionGetter = new RegExp("[a-zA-Z]+\\('(.*)'\\);");
 
 function extractTheoreticalPrice(script) {
 	const theoreticalGets = script.match(theoreticalGetter);
@@ -25,22 +26,31 @@ function extractTheoreticalPrice(script) {
 function extractTheoreticalPriceFromTitlePage(doc, appendToRows) {
 	let rowsPromises = [];
 
-	const rows = doc.getElementsByClassName("td-posicao-detalhada__info");
+	const rows = doc.getElementsByClassName("saldo-table-data-values");
 	for (let i = 0; i < rows.length; ++i) {
 		let row = rows[i];
-		let detailsLink = row.lastElementChild;
-
-		let href = detailsLink.getAttribute("href");
-		if (!href) {
-			continue;
-		}
+		let onclickAction = row.getAttribute("onclick");
+		let paramsStr = onclickAction.match(onclickActionGetter);
+		let params = paramsStr[1].split('|');
+		var obj = { CodigoInstituicaoFinanceira: params[0], CodigoTitulo: params[1], QuatidadeTitulo: params[2], MesConsulta: params[3], AnoConsulta: params[4], TickDataInvestimento: params[5] };
+		var href = "/MeusInvestimentos/LoadDetalhe";
+		var token = getToken();
 
 		let res = content.fetch(href, {
-			credentials: "same-origin"
+			method: "POST",
+			credentials: "same-origin",
+			body: JSON.stringify(obj),
+			redirect: 'follow',
+			headers: {
+				"Content-Type": "application/json; charset=utf-8",
+				"__RequestVerificationToken": token
+			}
 		});
-		res = res.then(r => r.text())
-			.then(t => {
-				const lastTheoreticalPrice = extractTheoreticalPrice(t);
+		console.log("res", res);
+		res = res
+			.then(r => r.json())
+			.then(o => {
+				const lastTheoreticalPrice = extractTheoreticalPriceFromDetailsRequest(o.view);
 				if (lastTheoreticalPrice) {
 					return lastTheoreticalPrice;
 				}
@@ -55,8 +65,30 @@ function extractTheoreticalPriceFromTitlePage(doc, appendToRows) {
 
 	return Promise.all(rowsPromises).then(v => {
 		return v
-			.map(s => parseFloat(s, 2))
 			.reduce((a, b) => { return a + b; }, 0)
 			.toFixed(2);
 	});
+}
+
+function extractTheoreticalPriceFromDetailsRequest(viewStr) {
+	const parser = new DOMParser();
+	const modal = parser.parseFromString(viewStr, "text/html");
+	const theoreticalSpan = modal.querySelector(".dataset2-legend .money-value");
+	const valueStr = (theoreticalSpan || {}).textContent;
+	return brlToNumber(valueStr);
+}
+
+function brlToNumber(str) {
+	if (!str) {
+		return 0;
+	}
+
+	return Number(str
+		.replace("R$", "")
+		.replace(".", "")
+		.replace(",", "."));
+}
+
+function getToken() {
+	return document.querySelector("form#__AjaxAntiForgeryForm input").value;
 }
