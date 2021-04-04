@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "td-preco-teorico (beta)",
+  "name": "td-preco-teorico",
   "version": "2.0",
   "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
   "icons": {
