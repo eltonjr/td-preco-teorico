@@ -46,7 +46,6 @@ function extractTheoreticalPriceFromTitlePage(doc, appendToRows) {
 				"__RequestVerificationToken": token
 			}
 		});
-		console.log("res", res);
 		res = res
 			.then(r => r.json())
 			.then(o => {

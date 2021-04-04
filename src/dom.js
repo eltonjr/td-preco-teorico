@@ -22,17 +22,16 @@ function appendToDetailsBody(value) {
 }
 
 function appendToTitleRow(row, promise) {
-	const p = document.createElement("p");
-	p.setAttribute("class", "td-posicao-detalhada__info__valor");
-	p.appendChild(document.createTextNode("Valor teórico bruto"));
+	const magicPosition = 5;
 
+	const theoreticalCell = document.createElement("td");
 	const span = document.createElement("span");
 	const text = document.createTextNode("Processando");
 	span.appendChild(text);
 
-	p.appendChild(span);
+	theoreticalCell.appendChild(span);
 
-	row.insertBefore(p, row.lastElementChild);
+	row.insertBefore(theoreticalCell, row.getElementsByTagName("td")[magicPosition]);
 
 	promise.then(value => {
 		text.textContent = `R$${value}`;
@@ -56,6 +55,27 @@ function appendToTitleTop(promise) {
 	promise.then(value => {
 		text.textContent = `R$${value}`;
 	});
+}
+
+function adjustTitleTable(doc) {
+	const table = doc.querySelector("table.saldo-table-container");
+	const tbody = table.getElementsByTagName("tbody");
+
+	const firstHeader = tbody[0].querySelector("tr.saldo-table-vencimento th");
+	firstHeader.setAttribute("colspan", "16");
+
+	const secondHeader = tbody[0].querySelector("tr.saldo-table-headers th");
+	secondHeader.setAttribute("colspan", "6");
+
+	const thirdHeader = tbody[0].querySelector("tr.saldo-table-data-names");
+	const theoreticalHeader = doc.createElement("td");
+	theoreticalHeader.setAttribute("class", "rentabilidade-cell");
+	theoreticalHeader.setAttribute("rowspan", "3");
+	theoreticalHeader.setAttribute("style", "background-color: #ABF;");
+	const theoreticalHeaderText = doc.createElement("span");
+	theoreticalHeaderText.appendChild(doc.createTextNode("VALOR TEÓRICO BRUTO"));
+	theoreticalHeader.appendChild(theoreticalHeaderText);
+	thirdHeader.appendChild(theoreticalHeader);
 }
 
 function appendToMainRow(row, promise) {
