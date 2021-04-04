@@ -54,6 +54,8 @@ O Portal só possui a informação de preço teórico na página do Detalhes do 
 
 Existe um Makefile pra facilitar as tarefas de desenvolvimento.
 
+Para executar o projeto a partir do código fonte, abra uma nova aba em `about:debugging` e selecione "Carregar extensão temporária".
+
 Recomendo ler a documentação da Mozilla sobre [como desenvolver](https://extensionworkshop.com/documentation/develop/) e quais as [regras para publicar](https://extensionworkshop.com/documentation/publish/) uma extensão.
 
 Fora isso, é só abrir um Pull Request!
