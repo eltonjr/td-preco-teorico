@@ -53,7 +53,8 @@ const rowsData = getDataFromRows(useSource);
 const parser = new DOMParser();
 Object.keys(rowsData).forEach(href => {
 	let res = content.fetch(href, {
-		credentials: "same-origin"
+		credentials: "same-origin",
+		redirect: 'follow'
 	});
 	res = res
 		.then(r => r.text())
