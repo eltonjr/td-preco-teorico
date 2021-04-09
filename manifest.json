@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "td-preco-teorico",
-  "version": "2.1",
+  "name": "Tesouro Direto - Preço teórico",
+  "version": "2.2",
   "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
   "icons": {
-    "64": "assets/td-icon-64-alt.png"
+    "64": "assets/td-icon-64.png"
   },
   "developer": {
     "name": "Elton Hoffmann",

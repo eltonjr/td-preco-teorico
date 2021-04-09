@@ -1,8 +1,9 @@
 # Tesouro Direto - Preço Teórico web extension
 
-Esta é uma extensão para Firefox que exibe o preço teórico de um investimento no Tesouro Direto
+Esta é uma extensão para Firefox e Chrome que exibe o preço teórico de um investimento no Tesouro Direto
 
-[Add-on link](https://addons.mozilla.org/en-US/firefox/addon/td-preco-teorico/)
+![firefox-icon](https://raw.githubusercontent.com/alrra/browser-logos/90fdf03c/src/firefox/firefox_48x48.png) [Firefox add-on link](https://addons.mozilla.org/en-US/firefox/addon/td-preco-teorico/)  
+![chrome-link](https://raw.githubusercontent.com/alrra/browser-logos/90fdf03c/src/chrome/chrome_48x48.png) [Chrome extension link](https://chrome.google.com/webstore/detail/td-preco-teorico/bnjfheobfmjneimmpjeadefjckljjpje?hl=en&authuser=0)
 
 ## Motivação
 
@@ -18,37 +19,15 @@ O Portal só possui a informação de preço teórico na página do Detalhes do 
 
 ### Página inicial
 
-**Antes**
-
-![inicial-antes](assets/example-main-before.png)
-
-**Depois**
-
-![inicial-depois](assets/example-main-after.png)
+![inicial](assets/banner-main.png)
 
 **Área de resumo**
 
-![inicial-resumo](assets/example-main-summary.png)
+![inicial-resumo](assets/banner-summary.png)
 
 ### Página de um Título
 
-**Antes**
-
-![titulos-antes](assets/example-titles-before.png)
-
-**Depois**
-
-![titulos-depois](assets/example-titles-after.png)
-
-### Página de Detalhes do Título
-
-**Antes**
-
-![detalhes-antes](assets/example-details-before.png)
-
-**Depois**
-
-![detalhes-depois](assets/example-details-after.png)
+![titulos](assets/banner-title.png)
 
 ## Contribuindo com o projeto
 
