@@ -2,12 +2,34 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
+const labels = {
+	processing: "Processando",
+	brlSign: "R$",
+	theoreticalBruteValue: "Valor teórico bruto",
+	theoreticalValue: "Valor teórico",
+	theoreticalTotalValue: "Valor teórico total"
+};
+
+const color = title => {
+	if (title.includes("IPCA")) {
+		return "#e4572e";
+	} else if (title.toUpperCase().includes("SELIC")) {
+		return "#4b3f72";
+	} else if (title.includes("IGP-M")) {
+		return "#ffc914";
+	} else if (title.toUpperCase().includes("PREFIXADO")) {
+		return "#119da4";
+	} else { // novelty color used in newly created column
+		return "#abfabf";
+	}
+};
+
 function appendToTitleRow(row, promise) {
 	const magicPosition = 5;
 
 	const theoreticalCell = document.createElement("td");
 	const span = document.createElement("span");
-	const text = document.createTextNode("Processando");
+	const text = document.createTextNode(labels.processing);
 	span.appendChild(text);
 
 	theoreticalCell.appendChild(span);
@@ -15,18 +37,18 @@ function appendToTitleRow(row, promise) {
 	row.insertBefore(theoreticalCell, row.getElementsByTagName("td")[magicPosition]);
 
 	promise.then(value => {
-		text.textContent = `R$${value}`;
+		text.textContent = `${labels.brlSign}${value}`;
 	});
 }
 
 function appendToTitleTop(promise) {
 	const span1 = document.createElement("span");
 	span1.setAttribute("class", "td-meu-investimento-titulo--valor");
-	span1.appendChild(document.createTextNode("Valor teórico bruto"));
+	span1.appendChild(document.createTextNode(labels.theoreticalBruteValue));
 
 	const span2 = document.createElement("span");
 	span2.setAttribute("class", "td-meu-investimento-titulo--cifrao");
-	const text = document.createTextNode("Processando");
+	const text = document.createTextNode(labels.processing);
 	span2.appendChild(text);
 
 	span1.appendChild(span2);
@@ -34,7 +56,7 @@ function appendToTitleTop(promise) {
 	document.querySelector(".td-meu-investimento-datalhe-posicao").appendChild(span1);
 
 	promise.then(value => {
-		text.textContent = `R$${value}`;
+		text.textContent = `${labels.brlSign}${value}`;
 	});
 }
 
@@ -52,9 +74,9 @@ function adjustTitleTable(doc) {
 	const theoreticalHeader = doc.createElement("td");
 	theoreticalHeader.setAttribute("class", "rentabilidade-cell");
 	theoreticalHeader.setAttribute("rowspan", "3");
-	theoreticalHeader.setAttribute("style", "background-color: #ABF;");
+	theoreticalHeader.setAttribute("style", `background-color: ${color("NEW COLUMN")};`);
 	const theoreticalHeaderText = doc.createElement("span");
-	theoreticalHeaderText.appendChild(doc.createTextNode("VALOR TEÓRICO BRUTO"));
+	theoreticalHeaderText.appendChild(doc.createTextNode(labels.theoreticalBruteValue.toUpperCase()));
 	theoreticalHeader.appendChild(theoreticalHeaderText);
 	thirdHeader.appendChild(theoreticalHeader);
 }
@@ -62,19 +84,19 @@ function adjustTitleTable(doc) {
 function appendToMainRow(row, promise) {
 	const div = document.createElement("div");
 	const span1 = document.createElement("span");
-	span1.appendChild(document.createTextNode("Valor teórico"));
+	span1.appendChild(document.createTextNode(labels.theoreticalValue));
 
 	const p = document.createElement("p");
 	p.setAttribute("class", "td-card-simples__valor");
 
 	const span2 = document.createElement("span");
 	span2.setAttribute("class", "td-card-simples__valor--cifrao");
-	span2.appendChild(document.createTextNode("R$"));
+	span2.appendChild(document.createTextNode(labels.brlSign));
 
 	p.appendChild(span2);
 
 	const span3 = document.createElement("span");
-	const text = document.createTextNode("Processando");
+	const text = document.createTextNode(labels.processing);
 	span3.appendChild(text);
 
 	p.appendChild(span3);
@@ -89,18 +111,6 @@ function appendToMainRow(row, promise) {
 	promise.then(value => {
 		text.textContent = `${value}`;
 	});
-}
-
-function color(title) {
-	if (title.includes("IPCA")) {
-		return "#e4572e";
-	} else if (title.includes("SELIC")) {
-		return "#4b3f72";
-	} else if (title.includes("IGP-M")) {
-		return "#ffc914";
-	} else {
-		return "#119da4";
-	}
 }
 
 function appendToMainTop(rowsData) {
@@ -137,8 +147,8 @@ function appendToMainTop(rowsData) {
 
 		const span3 = document.createElement("span");
 		span3.setAttribute("class", "td-graph-list__valor");
-		span3.setAttribute("data-gross-amount", "Processando");
-		const titleValue = document.createTextNode("Processando");
+		span3.setAttribute("data-gross-amount", labels.processing);
+		const titleValue = document.createTextNode(labels.processing);
 		span3.appendChild(titleValue);
 
 		span1.appendChild(span2);
@@ -173,16 +183,16 @@ function buildTitleHeader(byTitle) {
 	titleDiv2.setAttribute("class", "td-meus-investimentos__valor-bruto");
 	const titleP = document.createElement("p");
 	titleP.setAttribute("class", "td-meus-investimentos__titulo");
-	titleP.appendChild(document.createTextNode("Valor teórico total"));
+	titleP.appendChild(document.createTextNode(labels.theoreticalTotalValue));
 	const titlePDiv = document.createElement("div");
 	titlePDiv.setAttribute("class", "td-meus-investimentos__valor-box");
 	const titleSign = document.createElement("span");
 	titleSign.setAttribute("class", "td-meus-investimentos__cifrao");
-	titleSign.appendChild(document.createTextNode("R$"));
+	titleSign.appendChild(document.createTextNode(labels.brlSign));
 	const totalValue = document.createElement("span");
 	totalValue.setAttribute("class", "td-meus-investimentos__valor");
-	totalValue.setAttribute("data-gross-amount", "Processando");
-	const totalValueText = document.createTextNode("Processando");
+	totalValue.setAttribute("data-gross-amount", labels.processing);
+	const totalValueText = document.createTextNode(labels.processing);
 	totalValue.appendChild(totalValueText);
 
 	titlePDiv.appendChild(titleSign);
