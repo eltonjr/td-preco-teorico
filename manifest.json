@@ -14,17 +14,6 @@
   "content_scripts": [
     {
       "matches": [
-        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Detalhe/*"
-      ],
-      "js": [
-        "src/polyfill.js",
-        "src/dom.js",
-        "src/theoretical.js",
-        "src/page_details.js"
-      ]
-    },
-    {
-      "matches": [
         "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Titulo/*"
       ],
       "js": [
