@@ -4,6 +4,7 @@
 
 "use strict";
 
-adjustTitleTable(document);
-const balancePromise = extractTheoreticalPriceFromTitlePage(document, true);
-appendToTitleTop(balancePromise);
+const dom = new TitlePage(document);
+const balancePromise = extractTheoreticalPriceFromTitlePage(document, dom.appendToTableRow.bind(dom));
+
+dom.appendToTop(balancePromise);

@@ -4,63 +4,102 @@
 
 "use strict";
 
-const theoreticalGetter = new RegExp("JSON\.parse\(\((.*)\)\);");
-const onclickActionGetter = new RegExp("[a-zA-Z]+\\('(.*)'\\);");
+const noop = _ => {};
 
-function extractTheoreticalPrice(script) {
-	const theoreticalGets = script.match(theoreticalGetter);
-	if (theoreticalGets && theoreticalGets.length) {
-		let data = theoreticalGets[1].slice(1,-1);
-		try {
-			data = JSON.parse(data);
-			data = JSON.parse(data);
-		} catch (e) {
-			console.error(e);
-			return "Invalid data";
-		}
-
-		return data[data.length-1].TheoreticalPrice;
-	}
-}
-
-function extractTheoreticalPriceFromTitlePage(doc, appendToRows) {
-	let rowsPromises = [];
-
-	const rows = doc.getElementsByClassName("saldo-table-data-values");
-	for (let i = 0; i < rows.length; ++i) {
-		let row = rows[i];
-		let onclickAction = row.getAttribute("onclick");
-		let paramsStr = onclickAction.match(onclickActionGetter);
-		let params = paramsStr[1].split('|');
-		var obj = { CodigoInstituicaoFinanceira: params[0], CodigoTitulo: params[1], QuatidadeTitulo: params[2], MesConsulta: params[3], AnoConsulta: params[4], TickDataInvestimento: params[5] };
-		var href = "/MeusInvestimentos/LoadDetalhe";
-		var token = getToken();
-
+function extractTheoreticalPriceFromMainPage(doc, dataSource, rowFn = noop) {
+	// TODO make RowsData an object with strict fields
+	const rowsData = getDataFromMainRows(doc, dataSource);
+	const parser = new DOMParser();
+	Object.keys(rowsData).forEach(href => {
 		let res = content.fetch(href, {
-			method: "POST",
 			credentials: "same-origin",
-			body: JSON.stringify(obj),
-			redirect: 'follow',
-			headers: {
-				"Content-Type": "application/json; charset=utf-8",
-				"__RequestVerificationToken": token
-			}
+			redirect: 'follow'
 		});
 		res = res
-			.then(r => r.json())
-			.then(o => {
-				const lastTheoreticalPrice = extractTheoreticalPriceFromDetailsRequest(o.view);
-				if (lastTheoreticalPrice) {
-					return lastTheoreticalPrice;
-				}
+			.then(r => r.text())
+			.then(t => {
+				const titleDoc = parser.parseFromString(t, "text/html");
+				return extractTheoreticalPriceFromTitlePage(titleDoc);
 			})
 			.catch(e => console.error(e));
-		rowsPromises.push(res);
 
-		if (appendToRows) {
-			appendToTitleRow(row, res);
+		rowsData[href].promise = res;
+
+		rowsData[href].elems.forEach(row => rowFn(row, res));
+	});
+
+	return Object.values(rowsData);
+}
+
+function getDataFromMainRows(doc, dataSource) {
+	const rowsData = {};
+
+	// version included in march/2021
+	if (dataSource == "table") {
+		const onclickRowGetter = new RegExp("location\.href='(.*)'");
+		const rowBoxes = doc.getElementsByClassName("td-invest-table__row first-row-shadow");
+		for (let i = 0; i < rowBoxes.length; ++i) {
+			const box = rowBoxes[i];
+			const onclickAction = box.getAttribute("onclick");
+			const paramsStr = onclickAction.match(onclickRowGetter);
+			const href = paramsStr[1];
+			const title = trimTitle(box.querySelector(".title-name").innerText);
+			rowsData[href] = rowsData[href] || { title: title, elems: [], promise: null };
+			rowsData[href].elems.push(box);
 		}
 	}
+
+	if (dataSource == "cards") {
+		const rowBoxes = doc.getElementsByClassName("home-cards-container");
+		for (let i = 0; i < rowBoxes.length; ++i) {
+			const box = rowBoxes[i];
+			const rows = box.children;
+			for (let j = 0; j < rows.length; ++j) {
+				const row = rows[j];
+				const href = row.getAttribute("href");
+				const title = trimTitle(row.querySelector("h2").innerText);
+				rowsData[href] = rowsData[href] || { title: title, elems: [], promise: null };
+				rowsData[href].elems.push(row);
+			}
+		}
+	}
+
+	return rowsData;
+}
+
+function trimTitle(t) {
+	return t.split("\n").map(s => s.trim()).filter(s => s).join(" ")
+}
+
+function extractTheoreticalPriceFromTitlePage(doc, rowFn = noop) {
+	const onclickActionGetter = new RegExp("[a-zA-Z]+\\('(.*)'\\);");
+
+	const rows = doc.getElementsByClassName("saldo-table-data-values");
+	const rowsPromises = Array.from(rows).map(row => {
+		const onclickAction = row.getAttribute("onclick");
+		const paramsStr = onclickAction.match(onclickActionGetter);
+		const [
+			CodigoInstituicaoFinanceira, 
+			CodigoTitulo, 
+			QuatidadeTitulo,
+			MesConsulta,
+			AnoConsulta,
+			TickDataInvestimento
+		] = paramsStr[1].split('|');
+		const payload = { 
+			CodigoInstituicaoFinanceira, 
+			CodigoTitulo,
+			QuatidadeTitulo,
+			MesConsulta,
+			AnoConsulta,
+			TickDataInvestimento
+		};
+		const token = getToken();
+
+		let res = extractTheoreticalPriceFromDetailsRequest(payload, token);
+		rowFn(row, res);
+		return res;
+	})
 
 	return Promise.all(rowsPromises).then(v => {
 		return v
@@ -69,7 +108,23 @@ function extractTheoreticalPriceFromTitlePage(doc, appendToRows) {
 	});
 }
 
-function extractTheoreticalPriceFromDetailsRequest(viewStr) {
+function extractTheoreticalPriceFromDetailsRequest(payload, token) {
+	const response = content.fetch("/MeusInvestimentos/LoadDetalhe", {
+		method: "POST",
+		credentials: "same-origin",
+		body: JSON.stringify(payload),
+		redirect: 'follow',
+		headers: {
+			"Content-Type": "application/json; charset=utf-8",
+			"__RequestVerificationToken": token
+		}
+	});
+	return response
+		.then(r => r.json())
+		.then(o => extractTheoreticalPriceFromDetailsResponse(o.view));
+}
+
+function extractTheoreticalPriceFromDetailsResponse(viewStr) {
 	const parser = new DOMParser();
 	const modal = parser.parseFromString(viewStr, "text/html");
 	const theoreticalSpan = modal.querySelector(".dataset2-legend .money-value");
