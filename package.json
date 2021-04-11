@@ -3,10 +3,14 @@
   "version": "1.1.0",
   "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
   "main": "theoretical.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "eltonhnjr@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eltonjr/td-preco-teorico.git"
+  },
+  "keywords": [
+    "webextensions"
+  ],
   "license": "MPL 2",
   "devDependencies": {
     "web-ext": "^4.0.0"
