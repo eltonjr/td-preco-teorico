@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Tesouro Direto - Preço teórico",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
   "icons": {
     "64": "assets/td-icon-64.png"
@@ -25,7 +25,8 @@
     },
     {
       "matches": [
-        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos"
+        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos",
+        "*://portalinvestidor.tesourodireto.com.br/Acompanhar"
       ],
       "js": [
         "src/polyfill.js",
