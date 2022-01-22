@@ -53,10 +53,10 @@ class TitlePage {
 		const tbody = table.getElementsByTagName("tbody");
 
 		const firstHeader = tbody[0].querySelector("tr.saldo-table-vencimento th");
-		firstHeader.setAttribute("colspan", "16");
+		firstHeader.setAttribute("colspan", "17");
 
 		const secondHeader = tbody[0].querySelector("tr.saldo-table-headers th");
-		secondHeader.setAttribute("colspan", "6");
+		secondHeader.setAttribute("colspan", "7");
 
 		const thirdHeader = tbody[0].querySelector("tr.saldo-table-data-names");
 		const theoreticalHeader = this.doc.createElement("td");
@@ -100,7 +100,7 @@ class TitlePage {
 	 * @param {Promise} promise an async theoretical value
 	 */
 	appendToTableRow(row, promise) {
-		const magicPosition = 5;
+		const magicPosition = 6;
 
 		const theoreticalCell = this.doc.createElement("td");
 		const span = this.doc.createElement("span");
