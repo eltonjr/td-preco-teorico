@@ -53,10 +53,12 @@ class TitlePage {
 		const tbody = table.getElementsByTagName("tbody");
 
 		const firstHeader = tbody[0].querySelector("tr.saldo-table-vencimento th");
-		firstHeader.setAttribute("colspan", "17");
+		firstHeader.setAttribute("colspan", parseInt(firstHeader.getAttribute("colspan")) + 1);
 
 		const secondHeader = tbody[0].querySelector("tr.saldo-table-headers th");
-		secondHeader.setAttribute("colspan", "7");
+		// store the size of the table, so when appending the value row, we know where to put it
+		this.secondHeaderSize = parseInt(secondHeader.getAttribute("colspan")) + 1;
+		secondHeader.setAttribute("colspan", this.secondHeaderSize);
 
 		const thirdHeader = tbody[0].querySelector("tr.saldo-table-data-names");
 		const theoreticalHeader = this.doc.createElement("td");
@@ -100,8 +102,6 @@ class TitlePage {
 	 * @param {Promise} promise an async theoretical value
 	 */
 	appendToTableRow(row, promise) {
-		const magicPosition = 6;
-
 		const theoreticalCell = this.doc.createElement("td");
 		const span = this.doc.createElement("span");
 		const text = this.doc.createTextNode(labels.processing);
@@ -109,7 +109,7 @@ class TitlePage {
 
 		theoreticalCell.appendChild(span);
 
-		row.insertBefore(theoreticalCell, row.getElementsByTagName("td")[magicPosition]);
+		row.insertBefore(theoreticalCell, row.getElementsByTagName("td")[this.secondHeaderSize-1]);
 
 		promise.then(value => {
 			text.textContent = `${labels.brlSign}${value}`;
