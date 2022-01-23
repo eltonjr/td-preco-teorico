@@ -6,3 +6,8 @@
 if (typeof content === "undefined") {
 	content = window;
 }
+
+// browser is used by firefox, chrome calls it chrome
+if (typeof browser === "undefined") {
+	browser = chrome;
+}

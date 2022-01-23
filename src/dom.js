@@ -11,7 +11,6 @@
 
 const labels = {
 	processing: "Processando",
-	brlSign: "R$",
 	theoreticalBruteValue: "Valor teórico bruto",
 	theoreticalValue: "Valor teórico",
 	theoreticalTotalValue: "Valor teórico total"
@@ -32,6 +31,20 @@ const color = title => {
 	}
 };
 
+const buildFormatter = option => {
+	switch (option) {
+		case 'browser':
+			return new Intl.NumberFormat(navigator.language, { style: 'currency', currency: 'BRL' });
+		case 'noop':
+			return {
+				format: a => a
+			};
+		case 'br':
+		default:
+			return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+	}
+}
+
 /**
  * TitlePage groups DOM functions to be used in the page
  * /MeusInvestimentos/Titulo
@@ -48,6 +61,9 @@ class TitlePage {
 	 */
 	constructor(doc) {
 		this.doc = doc;
+		browser.storage.sync.get("formatter", data => {
+			this.formatter = buildFormatter(data.formatter);
+		});
 
 		const table = this.doc.querySelector("table.saldo-table-container");
 		const tbody = table.getElementsByTagName("tbody");
@@ -92,7 +108,7 @@ class TitlePage {
 		this.doc.querySelector(".td-meu-investimento-datalhe-posicao").appendChild(span1);
 	
 		promise.then(value => {
-			text.textContent = `${labels.brlSign}${value}`;
+			text.textContent = this.formatter.format(value);
 		});
 	}
 
@@ -112,7 +128,7 @@ class TitlePage {
 		row.insertBefore(theoreticalCell, row.getElementsByTagName("td")[this.secondHeaderSize-1]);
 
 		promise.then(value => {
-			text.textContent = `${labels.brlSign}${value}`;
+			text.textContent = this.formatter.format(value);
 		});
 	}
 }
@@ -131,6 +147,9 @@ class MainPage {
 	 */
 	constructor(doc) {
 		this.doc = doc;
+		browser.storage.sync.get("formatter", data => {
+			this.formatter = buildFormatter(data.formatter);
+		});
 		
 		const titleDiv = this.doc.createElement("div");
 		titleDiv.setAttribute("class", "td-meus-investimentos");
@@ -141,16 +160,12 @@ class MainPage {
 		titleP.appendChild(this.doc.createTextNode(labels.theoreticalTotalValue));
 		const titlePDiv = this.doc.createElement("div");
 		titlePDiv.setAttribute("class", "td-meus-investimentos__valor-box");
-		const titleSign = this.doc.createElement("span");
-		titleSign.setAttribute("class", "td-meus-investimentos__cifrao");
-		titleSign.appendChild(this.doc.createTextNode(labels.brlSign));
 		const totalValue = this.doc.createElement("span");
 		totalValue.setAttribute("class", "td-meus-investimentos__valor");
 		totalValue.setAttribute("data-gross-amount", labels.processing);
 		const totalValueText = this.doc.createTextNode(labels.processing);
 		totalValue.appendChild(totalValueText);
 	
-		titlePDiv.appendChild(titleSign);
 		titlePDiv.appendChild(totalValue);
 		
 		titleDiv2.appendChild(titleP);
@@ -223,7 +238,7 @@ class MainPage {
 				span3.setAttribute("data-gross-amount", sum);
 				span3.innerHTML = "";
 				span3.appendChild(titleValue);
-				titleValue.textContent = sum;
+				titleValue.textContent = this.formatter.format(sum);
 			});
 		});
 
@@ -238,7 +253,7 @@ class MainPage {
 			this.totalValueSpan.setAttribute("data-gross-amount", sum);
 			this.totalValueSpan.innerHTML = "";
 			this.totalValueSpan.appendChild(this.totalValueText);
-			this.totalValueText.textContent = sum;
+			this.totalValueText.textContent = this.formatter.format(sum);
 		});
 	}
 
@@ -255,18 +270,12 @@ class MainPage {
 	
 		const p = this.doc.createElement("p");
 		p.setAttribute("class", "td-card-simples__valor");
-	
+
 		const span2 = this.doc.createElement("span");
-		span2.setAttribute("class", "td-card-simples__valor--cifrao");
-		span2.appendChild(this.doc.createTextNode(labels.brlSign));
+		const text = this.doc.createTextNode(labels.processing);
+		span2.appendChild(text);
 	
 		p.appendChild(span2);
-	
-		const span3 = this.doc.createElement("span");
-		const text = this.doc.createTextNode(labels.processing);
-		span3.appendChild(text);
-	
-		p.appendChild(span3);
 	
 		div.appendChild(span1);
 		div.appendChild(p);
@@ -276,7 +285,7 @@ class MainPage {
 			.appendChild(div);
 	
 		promise.then(value => {
-			text.textContent = `${value}`;
+			text.textContent = this.formatter.format(value);
 		});
 	}
 }
