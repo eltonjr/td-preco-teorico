@@ -35,4 +35,9 @@ document.querySelector("form").addEventListener("submit", evt => {
 	browser.storage.sync.set({
 		formatter: selected
 	});
+
+	const feedback = document.createElement("span");
+	feedback.setAttribute("style", `color: green;`);
+	feedback.appendChild(document.createTextNode("Opções salvas!"));
+	document.querySelector("form").appendChild(feedback);
 });

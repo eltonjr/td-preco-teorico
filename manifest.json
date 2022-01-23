@@ -42,7 +42,7 @@
   "permissions": ["storage"],
   "browser_specific_settings": {
     "gecko": {
-      "id": "tesouro_direto@preco_teorico"
+      "id": "{f9c2e98c-0e7b-4732-919f-f1bc3116e836}"
     }
   }
 }
