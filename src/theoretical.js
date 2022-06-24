@@ -76,7 +76,11 @@ function extractTheoreticalPriceFromTitlePage(doc, rowFn = noop) {
 
 	const rows = doc.getElementsByClassName("saldo-table-data-values");
 	const rowsPromises = Array.from(rows).map(row => {
-		const onclickAction = row.getAttribute("onclick");
+		const tds = row.getElementsByTagName("td");
+		const iconTd = Array.from(tds)[0];
+		const anchors = iconTd.getElementsByTagName("a");
+		const iconAnchor = Array.from(anchors)[0];
+		const onclickAction = iconAnchor.getAttribute("onclick");
 		const paramsStr = onclickAction.match(onclickActionGetter);
 		const [
 			CodigoInstituicaoFinanceira, 
@@ -140,7 +144,9 @@ function brlToNumber(str) {
 	return Number(str
 		.replace("R$", "")
 		.replace(".", "")
-		.replace(",", "."));
+		.replace(",", ".")
+		.replace(";", "")
+		.trim());
 }
 
 function getToken() {
