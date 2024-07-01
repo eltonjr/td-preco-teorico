@@ -64,6 +64,21 @@ function getDataFromMainRows(doc, dataSource) {
 		}
 	}
 
+	if (dataSource == "boxes") {
+		const titlesContent = doc.getElementsByClassName("lista-titulos-body__content");
+		const brokers = titlesContent[0].children;
+		Array.from(brokers)
+			.filter(broker => broker.getAttribute("class") != "hidden")
+			.map(broker => broker.querySelector("#titulos-wrapper").children)
+			.flatMap(links => Array.from(links))
+			.forEach(a => {
+				const href = a.getAttribute("href");
+				const title = trimTitle(a.querySelector(".titulo-card__title").innerText);
+				rowsData[href] = rowsData[href] || { title: title, elems: [], promise: null };
+				// rowsData[href].elems.push(row);
+			});
+	}
+
 	return rowsData;
 }
 

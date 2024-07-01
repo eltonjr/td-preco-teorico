@@ -152,12 +152,11 @@ class MainPage {
 		});
 		
 		const titleDiv = this.doc.createElement("div");
-		titleDiv.setAttribute("class", "td-meus-investimentos");
-		const titleDiv2 = this.doc.createElement("div");
-		titleDiv2.setAttribute("class", "td-meus-investimentos__valor-bruto");
-		const titleP = this.doc.createElement("p");
-		titleP.setAttribute("class", "td-meus-investimentos__titulo");
-		titleP.appendChild(this.doc.createTextNode(labels.theoreticalTotalValue));
+		titleDiv.setAttribute("id", "td-preco-teorico");
+		titleDiv.setAttribute("class", "lembrete-investimento-box");
+		const title = this.doc.createElement("h4");
+		title.setAttribute("class", "titulo-card");
+		title.appendChild(this.doc.createTextNode(labels.theoreticalTotalValue));
 		const titlePDiv = this.doc.createElement("div");
 		titlePDiv.setAttribute("class", "td-meus-investimentos__valor-box");
 		const totalValue = this.doc.createElement("span");
@@ -168,11 +167,10 @@ class MainPage {
 	
 		titlePDiv.appendChild(totalValue);
 		
-		titleDiv2.appendChild(titleP);
-		titleDiv2.appendChild(titlePDiv);
-		titleDiv.appendChild(titleDiv2);
+		titleDiv.appendChild(title);
+		titleDiv.appendChild(titlePDiv);
 
-		this.doc.querySelector(".td-investimentos-resumo-box").appendChild(titleDiv);
+		this.doc.querySelector(".fx-column-30").appendChild(titleDiv);
 		this.totalValueSpan = totalValue;
 		this.totalValueText = totalValueText;
 	}
@@ -200,7 +198,7 @@ class MainPage {
 
 		const ul = this.doc.createElement("ul");
 		ul.setAttribute("class", "td-graph-list");
-		ul.setAttribute("style", "width: 60%;");
+		ul.setAttribute("style", "width: 60%; padding: 10px 20px");
 
 		Object.keys(byTitle).forEach(title => {
 			const li = this.doc.createElement("li");
@@ -218,7 +216,7 @@ class MainPage {
 			titleNameSpan.appendChild(titleName);
 
 			const span3 = this.doc.createElement("span");
-			span3.setAttribute("class", "td-graph-list__valor");
+			span3.setAttribute("style", "letter-spacing: -0.56px; text-align: right; margin-left: auto; position: relative;font-size: 1.8rem;font-weight: 600;");
 			span3.setAttribute("data-gross-amount", labels.processing);
 			const titleValue = this.doc.createTextNode(labels.processing);
 			span3.appendChild(titleValue);
@@ -243,7 +241,7 @@ class MainPage {
 		});
 
 		div.appendChild(ul);
-		this.doc.querySelector(".td-investimentos-resumo-box").appendChild(div);
+		this.doc.querySelector("#td-preco-teorico").appendChild(div);
 
 		Promise.all(Object.values(byTitle).flat()).then(v => {
 			const sum = v

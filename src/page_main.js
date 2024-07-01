@@ -6,8 +6,9 @@
 
 // sources of data can be:
 // cards: default view until 03/2021
-// table: default view after 03/2021
-const dataSource = "cards";
+// table: default view until 07/2024
+// boxes: default view now
+const dataSource = "boxes";
 
 const dom = new MainPage(document);
 // TODO implement append function to table
