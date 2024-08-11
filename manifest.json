@@ -44,6 +44,7 @@
   "options_ui": {
     "page": "src/options/options.html"
   },
+	"devtools_page": "src/devtools/devtools.html",
   "permissions": [
     "storage"
   ],
