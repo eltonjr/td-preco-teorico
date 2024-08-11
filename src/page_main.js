@@ -10,8 +10,14 @@
 // boxes: default view now
 const dataSource = "boxes";
 
+const config = LoadConfig();
+const logger = new Logger(config);
+const fetcher = new Fetcher(content, config);
 const dom = new MainPage(document);
-// TODO implement append function to table
+const domparser = new DOMParser();
+const scrapper = new ScrapperMainPage(document, logger, fetcher, domparser);
+
+// TODO implement append function to boxes
 const rowAppender = dataSource == "cards" ? dom.appendToMainRow.bind(dom) : void(0);
-const balancePromises = extractTheoreticalPriceFromMainPage(document, dataSource, rowAppender);
+const balancePromises = scrapper.scrapMainPage(rowAppender);
 dom.appendToTop(balancePromises);

@@ -21,8 +21,14 @@
       ],
       "js": [
         "src/polyfill.js",
-        "src/dom.js",
-        "src/theoretical.js",
+		"src/config.js",
+		"src/logger.js",
+		"src/cache.js",
+		"src/fetcher.js",
+        "src/dom_utils.js",
+		"src/dom_title.js",
+		"src/scrapper_utils.js",
+		"src/scrapper_title.js",
         "src/page_title.js"
       ],
       "css": []
@@ -34,8 +40,15 @@
       ],
       "js": [
         "src/polyfill.js",
-        "src/dom.js",
-        "src/theoretical.js",
+		"src/config.js",
+		"src/logger.js",
+		"src/cache.js",
+		"src/fetcher.js",
+        "src/dom_utils.js",
+		"src/dom_main.js",
+		"src/scrapper_utils.js",
+		"src/scrapper_title.js",
+		"src/scrapper_main.js",
         "src/page_main.js"
       ],
       "css": []
