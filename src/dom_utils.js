@@ -6,7 +6,8 @@ const labels = {
 	processing: "Processando",
 	theoreticalBruteValue: "Valor teórico bruto",
 	theoreticalValue: "Valor teórico",
-	theoreticalTotalValue: "Valor teórico total"
+	theoreticalTotalValue: "Valor teórico total",
+	error: "Erro"
 };
 
 // taken from TesouroDireto source code
@@ -36,4 +37,15 @@ const buildFormatter = option => {
 		default:
 			return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 	}
+}
+
+const sumArray = arr => {
+	if (arr.some(isNaN)) {
+		return labels.error;
+	}
+
+	return arr
+		.map(s => parseFloat(s, 2))
+		.reduce((a, b) => { return a + b; }, 0)
+		.toFixed(2);
 }

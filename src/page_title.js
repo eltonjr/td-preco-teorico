@@ -4,13 +4,17 @@
 
 "use strict";
 
-const config = LoadConfig();
-const logger = new Logger(config);
-const fetcher = new Fetcher(content, config);
-const dom = new TitlePage(document);
-const domparser = new DOMParser();
-const scrapper = new ScrapperTitlePage(document, logger, fetcher, domparser);
+async function loadTitle() {
+	const config = await LoadConfig();
+	const logger = new Logger(config);
+	const fetcher = new Fetcher(content, config, logger);
+	const dom = new TitlePage(document, config);
+	const domparser = new DOMParser();
+	const scrapper = new ScrapperTitlePage(document, logger, fetcher, domparser);
 
-const balancePromise = scrapper.scrapTitlePage(dom.appendToTableRow.bind(dom));
+	const balancePromise = scrapper.scrapTitlePage(dom.appendToTableRow.bind(dom));
 
-dom.appendToTop(balancePromise);
+	dom.appendToTop(balancePromise);
+}
+
+loadTitle();

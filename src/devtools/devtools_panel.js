@@ -8,29 +8,31 @@ console.log("devtools panel loaded");
 // 	document.body.innerHTML += `<div>${request.request.url}</div>`;
 // });
 
-document.addEventListener("DOMContentLoaded", () => {
-	browser.storage.sync.get("cfg", data => {
-		const cfg = data.cfg || {};
-		document.querySelector("#logger").checked = cfg.logger;
-		document.querySelector("#uncached").checked = cfg.uncached;
+const attrs = ["debug", "uncached"];
 
-		console.log("loaded cfg", cfg);
-	});
+attrs.forEach(attr => {
+	document.querySelector(`#${attr}`).addEventListener("change", updateAttr(attr));
+	document.addEventListener("DOMContentLoaded", loadAttr(attr));
 });
 
-document.querySelector("#logger").addEventListener("change", updateform);
-document.querySelector("#uncached").addEventListener("change", updateform);
+function updateAttr(attr) {
+	return () => {
+		const value = document.querySelector(`#${attr}`).checked;
+		browser.storage.local.set({
+			[attr]: value
+		});
 
-function updateform() {
-	const logger = document.querySelector("#logger").checked;
-	const uncached = document.querySelector("#uncached").checked;
-	const cfg = {
-		logger,
-		uncached
+		console.log("updated cfg", attr, value);
 	};
-	browser.storage.sync.set({
-		cfg
-	});
+}
 
-	console.log("updated cfg", cfg);
+function loadAttr(attr) {
+	return () => {
+		browser.storage.local.get(attr, data => {
+			const value = data[attr] || false;
+			document.querySelector(`#${attr}`).checked = value;
+
+			console.log("loaded cfg", attr, value);
+		});
+	};
 }

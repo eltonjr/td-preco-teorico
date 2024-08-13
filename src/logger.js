@@ -4,13 +4,13 @@
 
 class Logger {
 	constructor(cfg) {
-		this.enabled = cfg.logger;
-		this.log("Logger enabled");
+		this.enabled = cfg.debug;
+		this.log("Logger created: ", this.enabled);
 	}
 
-	log(message) {
+	log(...args) {
 		if (this.enabled) {
-			console.log(message);
+			console.log(...args);
 		}
 	}
 }

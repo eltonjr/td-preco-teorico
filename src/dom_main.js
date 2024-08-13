@@ -14,11 +14,12 @@ class MainPage {
 	 *
 	 * @param {HTMLDocument} doc the page where dom elements will be inserted into
 	 */
-	constructor(doc) {
+	constructor(doc, cfg, logger) {
 		this.doc = doc;
-		browser.storage.sync.get("formatter", data => {
-			this.formatter = buildFormatter(data.formatter);
-		});
+		this.formatter = buildFormatter(cfg.formatter);
+		this.debug = cfg.debug;
+		this.logger = logger;
+		this.logger.log("MainPage enabled");
 
 		const titleDiv = this.doc.createElement("div");
 		titleDiv.setAttribute("id", "td-preco-teorico");
@@ -97,15 +98,26 @@ class MainPage {
 			li.appendChild(span1);
 			ul.appendChild(li);
 
+			if (this.debug) {
+				const total = byTitle[title].length;
+				let done = 0;
+				byTitle[title].forEach(p => {
+					p.then(() => {
+						done++;
+						this.logger.log(`${title} ${done}/${total}`);
+						titleValue.textContent = labels.processing+" ("+done+"/"+total+")";
+					});
+				});
+			}
+
 			Promise.all(byTitle[title]).then(v => {
-				const sum = v
-					.map(s => parseFloat(s, 2))
-					.reduce((a, b) => { return a + b; }, 0)
-					.toFixed(2);
-				span3.setAttribute("data-gross-amount", sum);
-				span3.innerHTML = "";
-				span3.appendChild(titleValue);
-				titleValue.textContent = this.formatter.format(sum);
+				setTimeout(() => {
+					const sum = sumArray(v);
+					span3.setAttribute("data-gross-amount", sum);
+					span3.innerHTML = "";
+					span3.appendChild(titleValue);
+					titleValue.textContent = this.formatter.format(sum);
+				}, 500);
 			});
 		});
 
@@ -113,10 +125,7 @@ class MainPage {
 		this.doc.querySelector("#td-preco-teorico").appendChild(div);
 
 		Promise.all(Object.values(byTitle).flat()).then(v => {
-			const sum = v
-				.map(s => parseFloat(s, 2))
-				.reduce((a, b) => { return a + b; }, 0)
-				.toFixed(2);
+			const sum = sumArray(v);
 			this.totalValueSpan.setAttribute("data-gross-amount", sum);
 			this.totalValueSpan.innerHTML = "";
 			this.totalValueSpan.appendChild(this.totalValueText);

@@ -16,11 +16,9 @@ class TitlePage {
 	 *
 	 * @param {HTMLDocument} doc the page where dom elements will be inserted into
 	 */
-	constructor(doc) {
+	constructor(doc, cfg) {
 		this.doc = doc;
-		browser.storage.sync.get("formatter", data => {
-			this.formatter = buildFormatter(data.formatter);
-		});
+		this.formatter = buildFormatter(cfg.formatter);
 
 		const table = this.doc.querySelector("table.saldo-table-container");
 		const tbody = table.getElementsByTagName("tbody");

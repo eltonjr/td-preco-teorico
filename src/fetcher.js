@@ -3,10 +3,10 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 class Fetcher {
-	constructor(content, cfg) {
+	constructor(content, cfg, logger) {
 		this.content = content;
 		this.cache = NewCache(cfg);
-		this.logger = new Logger(cfg);
+		this.logger = logger;
 	}
 
 	get(url) {

@@ -2,18 +2,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-function LoadConfig() {
-	const cfg = {};
-
-	browser.storage.sync.get("formatter", data => {
-		cfg.formatter = data.formatter;
+async function LoadConfig() {
+	const cfg = await browser.storage.local.get({
+		formatter: "br",
+		debug: false,
+		uncached: false
 	});
 
-	browser.storage.sync.get("cfg", data => {
-		const inner = data.cfg || {};
-		cfg.logger = inner.logger;
-		cfg.uncached = inner.uncached;
-	});
-
+	console.log("loaded cfg", cfg);
 	return cfg;
 }
