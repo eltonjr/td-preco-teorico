@@ -16,10 +16,10 @@ class MainPage {
 	 */
 	constructor(doc, cfg, logger) {
 		this.doc = doc;
-		this.formatter = buildFormatter(cfg.formatter);
+		this.formatter = new Formatter(cfg.formatter);
 		this.debug = cfg.debug;
 		this.logger = logger;
-		this.logger.log("MainPage enabled");
+		this.logger.log("MainPage enabled, debug:", debug);
 
 		const titleDiv = this.doc.createElement("div");
 		titleDiv.setAttribute("id", "td-preco-teorico");
@@ -100,24 +100,43 @@ class MainPage {
 
 			if (this.debug) {
 				const total = byTitle[title].length;
+				this.logger.log(`${title} Total promises: ${total}`);
 				let done = 0;
 				byTitle[title].forEach(p => {
 					p.then(() => {
 						done++;
 						this.logger.log(`${title} ${done}/${total}`);
-						titleValue.textContent = labels.processing+" ("+done+"/"+total+")";
+						titleValue.textContent = `${labels.processing} (${done}/${total}) (?/?)`;
 					});
 				});
 			}
 
-			Promise.all(byTitle[title]).then(v => {
-				setTimeout(() => {
-					const sum = sumArray(v);
-					span3.setAttribute("data-gross-amount", sum);
-					span3.innerHTML = "";
-					span3.appendChild(titleValue);
-					titleValue.textContent = this.formatter.format(sum);
-				}, 500);
+			Promise.all(byTitle[title]).then(titlePs => {
+				const tpf = titlePs.flat();
+
+				if (this.debug) {
+					this.logger.log(`${title} all brokers resolved: ${tpf.length}`);
+					const total = tpf.length;
+					let done = 0;
+					tpf.forEach(p => {
+						p.then(() => {
+							done++;
+							this.logger.log(`${title} ${done}/${total}`);
+							titleValue.textContent = `${labels.processing} (${titlePs.length}/${titlePs.length}) (${done}/${total})`;
+						});
+					});
+				}
+
+				Promise.all(tpf).then(v => {
+					setTimeout(() => {
+						const sum = sumArray(v);
+						this.logger.log(`${title} all tpf resolved: ${v.length}`);
+						span3.setAttribute("data-gross-amount", sum);
+						span3.innerHTML = "";
+						span3.appendChild(titleValue);
+						titleValue.textContent = this.formatter.format(sum);
+					}, 500);
+				});
 			});
 		});
 
@@ -125,11 +144,19 @@ class MainPage {
 		this.doc.querySelector("#td-preco-teorico").appendChild(div);
 
 		Promise.all(Object.values(byTitle).flat()).then(v => {
-			const sum = sumArray(v);
-			this.totalValueSpan.setAttribute("data-gross-amount", sum);
-			this.totalValueSpan.innerHTML = "";
-			this.totalValueSpan.appendChild(this.totalValueText);
-			this.totalValueText.textContent = this.formatter.format(sum);
+			this.logger.log("main card got all promises");
+			Promise.all(v.flat()).then(vv => {
+				this.logger.log("main card got all inner promises");
+				this.logger.log(vv);
+				let sum = sumArray(vv);
+				if (isNaN(sum)) {
+					sum = `${labels.partial}: ${sumArrayValids(vv)}`;
+				}
+				this.totalValueSpan.setAttribute("data-gross-amount", sum);
+				this.totalValueSpan.innerHTML = "";
+				this.totalValueSpan.appendChild(this.totalValueText);
+				this.totalValueText.textContent = this.formatter.format(sum);
+			})
 		});
 	}
 

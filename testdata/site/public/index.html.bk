@@ -1,0 +1,1748 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="application-name" content="Tesouro Direto" />
+    <meta name="theme-color" content="#26336a" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Acesse o Portal do Investidor | Tesouro Direto">
+    <meta property="og:site_name" content="Tesouro Direto">
+    <meta property="og:image" content="https://portalinvestidor.tesourodireto.com.br/Content/img/td-logo.svg">
+    <meta property="og:url" content="https://portalinvestidor.tesourodireto.com.br/">
+    <meta name="twitter:title" content="Acesse o Portal do Investidor | Tesouro Direto" />
+    <meta name="twitter:card" content="summary_large_image">
+
+<script type="text/javascript" src="/ruxitagentjs_ICANVfgqru_10295240705110949.js" data-dtconfig="rid=RID_420574480|rpid=2085829664|domain=tesourodireto.com.br|reportUrl=/rb_ea8d7b8f-040c-423b-b726-54310cab2c40|app=c31964d880be804b|cuc=kju5m9kg|mel=100000|featureHash=ICANVfgqru|dpvc=1|lastModification=1722692529095|tp=500,50,0|rdnt=1|uxrgce=1|agentUri=/ruxitagentjs_ICANVfgqru_10295240705110949.js"></script><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png' />
+<link rel="icon" type="image/png" sizes="16x16" href='favicon-16x16.png' />
+<link rel="manifest" href='/site.webmanifest'>
+
+
+	<link rel="stylesheet" href="/bundles/css.css?v=2gdPHeeUR4Z0VhohUuXITau62NG2v_HsuV9RrH2R35w1?v=1.19.8957.19322" />
+
+	<link rel="stylesheet" href="/bundles/appcss.css?v=YcL9Mdlpsln-TG1kULvQWkC_q_PcpBlfcxrp-PAd0s41?v=1.19.8957.19322" />
+
+
+	<script src="/bundles/jquery.js?v=Htkv-2WFHyE_JYFaQD_KawfSE2zKk2i8C8kfXFF2XnU1?v=1.19.8957.19322"></script>
+
+<script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push(
+                    {
+                        'gtm.start': new Date().getTime(),
+                        event: 'gtm.js'
+                    }
+                );
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-NPM92WP');
+    </script>
+
+
+    <!-- Início do aviso de consentimento de cookies OneTrust para www.tesourodireto.com.br -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="24387ee5-6d9d-43cc-bea8-7b86c339962e"></script>
+    <script type="text/javascript">
+        function OptanonWrapper() { }
+    </script>
+    <!-- Final do aviso de consentimento de cookies OneTrust para www.tesourodireto.com.br -->
+
+
+    <title>Meus Investimentos - Tesouro Direto</title>
+
+</head>
+<body class="td-body" data-mobile-access="False">
+    <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPM92WP"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <nav id="td-header-acessibility-id" class="td-header-acessibility td-hidden-mobile" aria-label="Barra de acessibilidade">
+    <ul class="td-ul-acessibilidade">
+        <li class="td-barra-acessibilidade td-espacamento">
+            <a href="#ancora" accesskey="1" autofocus>Ir ao Conteúdo[1]</a>
+        </li>
+
+        <li class="td-barra-acessibilidade">
+            <a href="#menuDesktop" tabindex="0" accesskey="2">Ir ao menu[2]</a>
+        </li>
+
+        <li class="td-barra-acessibilidade__button divisao-menu">
+            <a role="button" tabindex="0" accesskey="3" id="btnAumentar" aria-label="Aumentar fonte">Aumentar fonte[3]</a>
+        </li>
+
+        <li class="td-barra-acessibilidade__button">
+            <a role="button" tabindex="0" accesskey="4" aria-label="tamanho normal" id="btnReset">Tamanho Normal[4]</a>
+        </li>
+        <li class="td-barra-acessibilidade__button">
+            <a role="button" tabindex="0" id="btnDiminuir" accesskey="5" aria-label="Diminuir fonte">Diminuir fonte[5]</a>
+        </li>
+        <li class="td-barra-acessibilidade__button">
+            <a href="#altocontraste" id="altocontraste" aria-pressed="false" class="" role="button" tabindex="0" accesskey="6" aria-label="Alto Contraste" onclick="window.toggleContrast()">
+                <img src="/Content/img/icon/td-alto-Contraste.svg" class=" td-ajuste td-img_contraste" alt="circulo com metade do espaço preenchido" aria-hidden="true" />
+                Alto contraste[6]
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+
+
+
+<div id="td-header-desktop-id" class="td-header td-header-desktop">
+    <div id="header-first-div-id" class='header-first-div'>
+        <button class="td-menu-trigger" type="button">
+            <span class="td-menu-trigger__label">Menu</span>
+            <span class="td-menu-trigger__icon"></span>
+        </button>
+        <div class="td-logo">
+            <a href="/Acompanhar" title="Retorna à Página Inicial" aria-label="Logo do Tesouro Direto">
+                <div class="td-logo__title">
+                    <img src="/Content/img/td-logo.svg" />
+                </div>
+            </a>
+        </div>
+        <div class="td-nav">
+            <ul class="td-nav-list">
+                <li class="td-nav-list__item">
+                    <a class="td-navbar-list__link td-nav-acompanhar" href="/Acompanhar" aria-current="true">
+                        <div style="display: flex; align-items: center;">
+                            <img style="margin-right: 11px;" src="/Content/img/icon/td-home.svg" alt="Início" aria-hidden="true">
+                            <span style="color: #26336A;">
+                                Início
+                            </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+                <a id="carrinhoHeader" href="/Carrinho" class="td-nav-cart">
+                    <img aria-hidden="true" src='/Content/img/icon/td-cart.svg' alt="Carrinho" class="td-nav-card__icon">
+                    <span id="carrinhoQuantidade" data-valor-carrinho="0" class="td-item-carrinho carrinhoItens display-none-general"></span>
+                </a>
+            <div class="td-nav-meus-dados">
+                <span id="menuDoUsuario" class="td-nav-meus-dados__user" tabindex="0" role="button" aria-label="E" aria-haspopup="true" aria-expanded="false">
+                    E
+                </span>
+                <div id="usuario" class="td-nav-meus-dados__menu td-nav-meus-dados__menu--active">
+                    <ul style="list-style:none">
+                        <li>
+                            <a class="td-nav-meus-dados__link" href="/MeusDados" id="botaoMeusDados" role="button">Meus dados</a>
+                        </li>
+                        <li>
+                            <a class="td-nav-meus-dados__link" href="https://www.tesourodireto.com.br/central-de-atendimento/" target="_blank" rel="nofollow" title="Abre em uma página externa">Ajuda</a>
+                        </li>
+                        <li>
+                            <a class="td-nav-meus-dados__link" href="/mapa-do-site">Mapa do Site</a>
+                        </li>
+                        <li>
+                            <a class="td-nav-meus-dados__link" href="/acessibilidade">Acessibilidade</a>
+                        </li>
+                        <li>
+                            <a class="td-nav-meus-dados__link" href="/Taxas/Semestrais">Taxa semestral</a>
+                        </li>
+                            <li>
+                                <a class="td-nav-meus-dados__link" href="/Login/Logout" id="botaoSair" role="button">Sair</a>
+                            </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="is-sticky display-none">
+        <div style="height:100%; display: flex; align-items: center; justify-content: center; ">
+
+            <a href='/Investir' id="lnkInvestir" class="td-menu-link" role="button">
+                <div class="menu-itens-sticky">
+                    <div class="round-sticky placeholder placeholder-glow" id="round-sticky-investir">
+                        <img width="27" height="27" src="/Content/img/icon/td-investir-icon.svg" alt="Investimentos" aria-hidden="true">
+                    </div>
+                    <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-investir">Investir</p>
+                </div>
+            </a>
+            <a href='/MinhaAposentadoria' id="lnkMinhaAposentadoria" class="td-menu-link" role="button">
+                <div class="menu-itens-sticky">
+                    <div class="round-sticky placeholder placeholder-glow" id="round-sticky-minhaaposentadoria">
+                        <img width="25" height="25" src="/Content/img/icon/td-resort-icon.svg" alt="Educa mais" aria-hidden="true">
+                    </div>
+                    <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-minhaaposentadoria">Aposentadoria</p>
+                </div>
+            </a>
+            <a href="/EducaMais/Extrato" id="lnkEducaMais" class="td-menu-link" role="button">
+                <div class="menu-itens-sticky">
+                    <div class="round-sticky placeholder placeholder-glow" id="round-sticky-educamais">
+                        <img width="25" height="25" src="/Content/img/icon/educaMais-book.svg" alt="Educa mais" aria-hidden="true">
+                    </div>
+                    <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-educamais">Educa+</p>
+                </div>
+            </a>
+                    <a href="/GestaoParental" id="lnkGerenciarContas" class="td-menu-link" role="button">
+                        <div class="menu-itens-sticky">
+                            <div class="round-sticky placeholder placeholder-glow" id="round-sticky-gerenciarcontas">
+                                <img width="38" height="38" src="/Content/img/icon/gestao-parental.svg" alt="Consultas" aria-hidden="true">
+                            </div>
+                            <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-gerenciarcontas">TD Família</p>
+                        </div>
+                    </a>
+
+            <a href="/IncentivaMais/Acompanhar" id="lnkIncentivaMais" class="td-menu-link" role="button">
+                <div class="menu-itens-sticky">
+                    <div class="round-sticky placeholder placeholder-glow" id="round-sticky-tdcoletivo">
+                        <img width="28" height="28" src="/Content/img/icon/incentivaMais-book.svg" alt="TD Coletivo" aria-hidden="true">
+                    </div>
+                    <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-tdcoletivo">TD Coletivo</p>
+                </div>
+            </a>
+
+            <a href="/Reinvestir" id="lnkReinvestir" class="td-menu-link" role="button">
+                <div class="menu-itens-sticky">
+                    <div class="round-sticky placeholder placeholder-glow" id="round-sticky-reinvestir">
+                        <img width="25" height="25" src="/Content/img/icon/td-money-icon.svg" alt="Investimentos" aria-hidden="true">
+                    </div>
+                    <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-reinvestir">Reinvestir</p>
+                </div>
+            </a>
+            <a href="/Agendamentos" id="lnkAgendamento" class="td-menu-link" role="button">
+                <div class="menu-itens-sticky">
+                    <div class="round-sticky placeholder placeholder-glow" id="round-sticky-agendamentos">
+                        <img width="29" height="29" src="/Content/img/icon/td-calendar.svg" alt=" " aria-hidden="true">
+                    </div>
+                    <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-agendamentos">Agendamentos</p>
+                </div>
+            </a>
+
+
+            <a href="/Resgatar" id="lnkResgatar" class="td-menu-link" role="button">
+                <div class="menu-itens-sticky">
+                    <div class="round-sticky placeholder placeholder-glow" id="round-sticky-resgatar">
+                        <img width="32" height="32" src="/Content/img/icon/td-money-circle-icon.svg" alt="Resgatar" aria-hidden="true">
+                    </div>
+                    <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-resgatar">Resgatar</p>
+                </div>
+            </a>
+
+
+            <a href="/Consulta" id="lnkConsulta" class="td-menu-link" role="button">
+                <div class="menu-itens-sticky">
+                    <div class="round-sticky placeholder placeholder-glow" id="round-sticky-consulta">
+                        <img width="32" height="32" src="/Content/img/icon/td-clock-green.svg" alt="Consultas" aria-hidden="true">
+                    </div>
+                    <p class="menu-subtitle-sticky placeholder placeholder-glow" id="menu-subtitle-sticky-consulta">Consulta</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div id="page-header-id" class="page-header">
+    <div style="height:100%; display: flex; align-items: center; justify-content: center; ">
+        <a href='/Investir' id="lnkInvestir" class="td-menu-link" role="button">
+            <div class="menu-itens">
+                <div class="round placeholder placeholder-glow" id="round-investir">
+                    <img src="/Content/img/icon/td-investir-icon.svg" alt="Investimentos" aria-hidden="true">
+                </div>
+                <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-investir">Investir</p>
+            </div>
+        </a>
+        <a href='/MinhaAposentadoria' id="lnkMinhaAposentadoria" class="td-menu-link" role="button">
+            <div class="menu-itens">
+                <div class="round placeholder placeholder-glow" id="round-minhaaposentadoria">
+                    <img src="/Content/img/icon/td-resort-icon.svg" alt="Investimentos" aria-hidden="true">
+                </div>
+                <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-minhaaposentadoria">Aposentadoria</p>
+            </div>
+        </a>
+        <a href="/EducaMais/Extrato" id="lnkEducaMais" class="td-menu-link" role="button">
+            <div class="menu-itens">
+                <div class="round placeholder placeholder-glow" id="round-educamais">
+                    <img src="/Content/img/icon/educaMais-book.svg" alt="Educa mais" aria-hidden="true">
+                </div>
+                <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-educamais">Educa+</p>
+            </div>
+        </a>
+                <a href="/GestaoParental" id="lnkGerenciarContas" class="td-menu-link" role="button">
+                    <div class="menu-itens">
+                        <div class="round placeholder placeholder-glow" id="round-gerenciarcontas">
+                            <img src="/Content/img/icon/gestao-parental.svg" alt="Consultas" aria-hidden="true">
+                        </div>
+                        <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-gerenciarcontas">TD Família</p>
+                    </div>
+                </a>
+
+        <a href="/IncentivaMais/Acompanhar" id="lnkIncentivaMais" class="td-menu-link" role="button">
+            <div class="menu-itens">
+                <div class="round placeholder placeholder-glow" id="round-tdcoletivo">
+                    <img src="/Content/img/icon/incentivaMais-book.svg" alt="TD Coletivo" aria-hidden="true">
+                </div>
+                <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-tdcoletivo">TD Coletivo</p>
+            </div>
+        </a>
+        <a href="/Reinvestir" id="lnkReinvestir" class="td-menu-link" role="button">
+            <div class="menu-itens">
+                <div class="round placeholder placeholder-glow" id="round-reinvestir">
+                    <img src="/Content/img/icon/td-money-icon.svg" alt="Investimentos" aria-hidden="true">
+                </div>
+                <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-reinvestir">Reinvestir</p>
+            </div>
+        </a>
+        <a href="/Agendamentos" id="lnkAgendamento" class="td-menu-link" role="button">
+            <div class="menu-itens">
+                <div class="round placeholder placeholder-glow" id="round-agendamentos">
+                    <img src="/Content/img/icon/td-calendar.svg" alt=" " aria-hidden="true">
+                </div>
+                <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-agendamentos">Agendamentos</p>
+            </div>
+        </a>
+        <a href="/Resgatar" id="lnkResgatar" class="td-menu-link" role="button">
+            <div class="menu-itens">
+                <div class="round placeholder placeholder-glow" id="round-resgatar">
+                    <img src="/Content/img/icon/td-money-circle-icon.svg" alt="Resgatar" aria-hidden="true">
+
+                </div>
+                <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-resgatar">Resgatar</p>
+            </div>
+        </a>
+        <a href="/Consulta" id="lnkConsulta" class="td-menu-link" role="button">
+            <div class="menu-itens">
+                <div class="round placeholder placeholder-glow" id="round-consulta">
+                    <img src="/Content/img/icon/td-clock-green.svg" alt="Consultas" aria-hidden="true">
+                </div>
+                <p class="menu-subtitle placeholder placeholder-glow" id="menu-subtitle-consulta">Consulta</p>
+            </div>
+        </a>
+    </div>
+    <div style="width: 100%; height: 1px; background: #D6D6D6; margin-top: 3rem; flex: none; order: 2; flex-grow: 0; "></div>
+
+</div>
+
+<div id="td-body-layout-positioner-id" class="td-body-layout-positioner">
+</div>
+
+<div id="modal-informacoes-controle" role="dialog" tabindex="-1">
+    <div class="modal-menor">
+        <div class="modal-menor__info">
+            <h4>Detalhes da conta:</h4>
+            <span>Você poderá consultar saldos, fazer e resgatar investimentos na conta de ELTON LUIS HOFFMANN JUNIOR. Lembre-se: toda operação realizada aqui, terá impacto na conta do menor.</span>
+        </div>
+
+        <div class="modal-menor-infos__actions">
+            <div id="botao-informacoes-controle" class="modal-menor__actions__button primary">Ok, entendi</div>
+        </div>
+    </div>
+    <div id="background-informacoes-controle" class="modal-aviso-background"></div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#botao-informacoes-controle").click(function () {
+            $('#modal-informacoes-controle').css('display', 'none');
+        }.bind(this));
+
+        $("#background-informacoes-controle").click(function () {
+            $('#modal-informacoes-controle').css('display', 'none');
+        }.bind(this));
+        const headerFirstDiv = document.querySelector("#header-first-div-id");
+        const layoutPositionerDiv = document.querySelector("#td-body-layout-positioner-id");
+        const headerDesktopId = document.querySelector("#td-header-desktop-id");
+        const tdheaderacessibilityid = document.querySelector("#td-header-acessibility-id");
+
+        const pageheader = document.querySelector("#page-header-id");
+        const sticky = document.querySelector(".is-sticky");
+        const toggleClass = "display-none";
+        const cpfDependente = '';
+
+
+        if (cpfDependente) {
+            $('#page-header-id').removeClass('page-header');
+            $('#page-header-id').addClass('page-header-gestao-contas');
+            $('.td-nav-list').addClass('td-nav-list-none');
+            layoutPositionerDiv.classList.add("td-body-layout-positioner-gestao-contas");
+        }
+
+        var elementExists = document.getElementById("menu-itens-sorteio");
+
+        if (!elementExists) {
+            $('.menu-itens').addClass('menu-itens-without-sorteio');
+            $('.menu-itens-sticky').addClass('menu-itens-sticky-without-sorteio');
+        }
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 198) {
+
+                headerFirstDiv.classList.remove("header-first-div");
+                headerFirstDiv.classList.add("header-first-div--scrolled");
+
+                tdheaderacessibilityid.classList.add("td-header-acessibility--scrolled");
+                sticky.classList.remove(toggleClass);
+
+                if (cpfDependente) {
+                    $('#td-structure-banner-gestao-contas-id').removeClass('td-structure-banner-gestao-contas');
+                    $('#td-structure-banner-gestao-contas-id').addClass('td-structure-banner-gestao-contas--scrolled');
+                    $('#td-banner-menor-gestao-contas-top-id').removeClass('td-banner-menor-gestao-contas-top');
+                    $('#td-banner-menor-gestao-contas-top-id').addClass('td-banner-menor-gestao-contas-top--scrolled');
+                    $('#td-structure-banner-menor-gestao-contas-bottom-id').removeClass('td-structure-banner-menor-gestao-contas-bottom');
+                    $('#td-structure-banner-menor-gestao-contas-bottom-id').addClass('td-structure-banner-menor-gestao-contas-bottom--scrolled');
+                }
+            } else {
+                tdheaderacessibilityid.classList.remove("td-header-acessibility--scrolled");
+
+
+                headerDesktopId.classList.remove("td-header-desktop--scrolled");
+                headerDesktopId.classList.add("td-header-desktop");
+
+                headerFirstDiv.classList.remove("header-first-div--scrolled");
+                headerFirstDiv.classList.add("header-first-div");
+
+                pageheader.classList.remove("page-header--scrolled");
+                pageheader.classList.add("page-header");
+
+                layoutPositionerDiv.classList.remove("td-body-layout-positioner--scrolled");
+                layoutPositionerDiv.classList.add("td-body-layout-positioner");
+
+                pageheader.classList.remove(toggleClass);
+                sticky.classList.add(toggleClass);
+
+                if (cpfDependente) {
+                    $('#td-structure-banner-gestao-contas-id').removeClass('td-structure-banner-gestao-contas--scrolled');
+                    $('#td-structure-banner-gestao-contas-id').addClass('td-structure-banner-gestao-contas');
+                    $('#td-banner-menor-gestao-contas-top-id').removeClass('td-banner-menor-gestao-contas-top--scrolled');
+                    $('#td-banner-menor-gestao-contas-top-id').addClass('td-banner-menor-gestao-contas-top');
+                    $('#td-structure-banner-menor-gestao-contas-bottom-id').removeClass('td-structure-banner-menor-gestao-contas-bottom--scrolled');
+                    $('#td-structure-banner-menor-gestao-contas-bottom-id').addClass('td-structure-banner-menor-gestao-contas-bottom');
+                }
+            }
+        });
+
+    });
+    function mostrarModalInformacoesMenorDeIdade() {
+        $('#modal-informacoes-controle').css('display', 'block');
+    }
+
+</script>
+
+
+
+<div id="modal-desvincular-conta" role="dialog" tabindex="-1" style="display: none">
+    <div class="modal-menor">
+        <div class="modal-menor__info">
+            <h4>Deseja desvincular desta conta?</h4>
+            <span>Ao desvincular, você continuará sendo o representante legal desta conta, porém não poderá controlá-la através do TD Família.</span>
+        </div>
+
+<form action="/GestaoParental/Desvincular" class="modal-menor__actions" id="desvincular-conta-form" method="post">            <input id="linkRequestCode" name="linkRequestCode" value="0" hidden />
+            <div id="cancelar-desvinculo" class="modal-menor__actions__button secondary">Voltar</div>
+            <div onclick="" type="submit" id="continuar-desvinculo" class="modal-menor__actions__button primary">Desvincular</div>
+</form>        <div class="modal-menor__actions">
+
+        </div>
+    </div>
+    <div class="modal-aviso-background"></div>
+</div>
+
+
+    <main class="td-main td-main--acompanhar">
+
+
+<input type="hidden" id="hdnVisualizaValor" value="True" />
+<input type="hidden" id="hdnTipoPagina" value="1" />
+
+
+
+<div class="td-mobile-menu">
+
+
+
+<div class="td-menu-mobile td-menu-mobile__closed td-hidden-desk">
+    <div class="td-menu-mobile__item">
+        <div class="td-menu-mobile__close"></div>
+    </div>
+    <div class="td-menu-mobile__item">
+        <div class="td-menu-mobile__item__icon">
+            <div class="td-menu-mobile__cicle_first_letter">
+                <span>E</span>
+            </div>
+        </div>
+        <div class="td-menu-mobile__item__text">
+            <span><strong>Meu perfil</strong></span>
+        </div>
+        <div class="td-menu-mobile__item__seta__perfil td-menu-mobile__item__seta__perfil__fechado">
+            &nbsp;
+        </div>
+    </div>
+    <div class="td-menu-mobile__collapsable ">
+<div class="td-menu-mobile__item"><a href="/MeusDados"><div class="td-menu-mobile__item__text"><span>Meus dados</span></div></a></div><div class="td-menu-mobile__item"><a href="https://www.tesourodireto.com.br/central-de-atendimento" target="_blank"><div class="td-menu-mobile__item__text"><span>Ajuda</span></div></a></div><div class="td-menu-mobile__item"><a href="/mapa-do-site"><div class="td-menu-mobile__item__text"><span>Mapa do site</span></div></a></div><div class="td-menu-mobile__item"><a href="/acessibilidade"><div class="td-menu-mobile__item__text"><span>Acessibilidade</span></div></a></div><div class="td-menu-mobile__item"><a href="/Taxas/Semestrais"><div class="td-menu-mobile__item__text"><span>Taxa semestral</span></div></a></div>    </div>
+    <div class="td-menu-mobile__scrollable">
+<div class="td-menu-mobile__item"><a href="/Acompanhar"><div class="td-menu-mobile__item__icon"><img alt="Ícone uma casa que direciona para o resumo de seus investimentos" src="/Content/img/icon/menu-mobile/inicio.svg"></img></div><div class="td-menu-mobile__item__text"><span>In&#237;cio</span></div></a></div><div class="td-menu-mobile__item"><a href="/Investir"><div class="td-menu-mobile__item__icon"><img alt="Ícone de uma nota de dinheiro que direciona para a lista de títulos públicos disponíveis para investir" src="/Content/img/icon/menu-mobile/investir.svg"></img></div><div class="td-menu-mobile__item__text"><span>Investir</span></div></a></div><div class="td-menu-mobile__item"><a href="/MinhaAposentadoria/RendaMais"><div class="td-menu-mobile__item__icon"><img alt="Ícone de uma cadeira de praia que direciona para a funcionalidade RendA+" src="/Content/img/icon/menu-mobile/aposentadoria.svg"></img></div><div class="td-menu-mobile__item__text"><span>Aposentadoria</span></div></a></div><div class="td-menu-mobile__item"><a href="/EducaMais/Extrato"><div class="td-menu-mobile__item__icon"><img alt="Ícone de um livro que direciona para a funcionalidade Educa+" src="/Content/img/icon/menu-mobile/educamais.svg"></img></div><div class="td-menu-mobile__item__text"><span>Educa+</span></div></a></div><div class="td-menu-mobile__item"><a href="/GestaoParental"><div class="td-menu-mobile__item__icon"><img alt="Ícone de dois adultos apoiando a mão em uma criança que direciona para a funcionalidade de controle de contas de dependentes" src="/Content/img/icon/menu-mobile/gerenciarcontas.svg"></img></div><div class="td-menu-mobile__item__text"><span>TD Fam&#237;lia</span></div></a></div><div class="td-menu-mobile__item"><a href="/IncentivaMais/Acompanhar"><div class="td-menu-mobile__item__icon"><img alt="Ícone de um capelo que direciona para a funcionalidade de controle de contas de dependentes" src="/Content/img/icon/menu-mobile/tdcoletivo.svg"></img></div><div class="td-menu-mobile__item__text"><span>TD Coletivo</span></div></a></div><div class="td-menu-mobile__item"><a href="/Reinvestir"><div class="td-menu-mobile__item__icon"><img alt="Ícone de notas de dinheiro que direciona para a funcionalidade de reinvestimento" src="/Content/img/icon/menu-mobile/reinvestir.svg"></img></div><div class="td-menu-mobile__item__text"><span>Reinvestir</span></div></a></div><div class="td-menu-mobile__item"><a href="/Agendamentos"><div class="td-menu-mobile__item__icon"><img alt="Ícone de um calendário que direciona para a funcionalidade de agendamentos" src="/Content/img/icon/menu-mobile/agendamento.svg"></img></div><div class="td-menu-mobile__item__text"><span>Agendamento</span></div></a></div><div class="td-menu-mobile__item"><a href="/Resgatar"><div class="td-menu-mobile__item__icon"><img alt="Ícone de um cifrão com um círculo que direciona para a funcionalidade de resgate" src="/Content/img/icon/menu-mobile/resgatar.svg"></img></div><div class="td-menu-mobile__item__text"><span>Resgatar</span></div></a></div><div class="td-menu-mobile__item"><a href="/Consulta"><div class="td-menu-mobile__item__icon"><img alt="Ícone de um relógio que direciona para a lista de agendamentos" src="/Content/img/icon/menu-mobile/consulta.svg"></img></div><div class="td-menu-mobile__item__text"><span>Consulta</span></div></a></div><div class="td-menu-mobile__item__sair td-menu-mobile__item"><a href="/Login/LogOut"><div class="td-menu-mobile__item__icon"><img alt="Ícone de uma porta com uma flecha para a direita que desloga o usuário e direciona para a tela de login" src="/Content/img/icon/menu-mobile/sair.svg"></img></div><div class="td-menu-mobile__item__text"><span>Sair</span></div></a></div>    </div>
+</div>
+</div>
+
+<div class="grid-display grid-display-meusinvestimentos td-acompanhar-main-content td-meus-investimentos-custom">
+
+    <div class="td-acompanhar-content">
+<div class="fx-column-30">
+
+    <div class="td-hidden-desk td-hidden-mobile">
+        <h1>Meus investimentos</h1>
+    </div>
+
+
+
+
+    <section class="section-two-columns">
+
+
+<section class="position-summary-box">
+    <div class="position-summary-box__title">
+
+                <div class="ultimas-operacoes-select-container">
+
+
+<div class="custom-select-container placeholder placeholder-glow ">
+    <select class="custom-select placeholder placeholder-glow" customSelect="False" id="ddl_instituicaoFinanceira" name="ddl_instituicaoFinanceira"><option value="">Filtrar corretora</option>
+<option value="-1">Todas as corretoras</option>
+<option value="1026">BANCO BTG PACTUAL S/A</option>
+<option value="1570">CAIXA ECONOMICA FEDERAL</option>
+<option value="3">XP INVESTIMENTOS CCTVM S/A</option>
+<option value="308">CLEAR CORRETORA - GRUPO XP</option>
+<option value="386">RICO INVESTIMENTOS - GRUPO XP</option>
+<option value="90">NU INVEST CORRETORA DE VALORES S.A.</option>
+</select>
+</div>
+
+<script type="text/javascript">
+
+      $(function () {
+          let flag = 0;
+
+            const selectElement = document.getElementById("ddl_instituicaoFinanceira");
+
+          $(selectElement).click(function (e) {
+              e.stopPropagation();
+              const target = e.target;
+
+              $(target).addClass('custom-select-open')
+              if (flag === 0) {
+                  flag = 1;
+                  $(document).one("click", function () {
+                      flag = 0;
+                      $(target).removeClass('custom-select-open')
+                  });
+              }
+          });
+      });
+</script>
+                </div>
+
+
+        <a class="botao-grafico placeholder placeholder-glow" href="/Extrato">
+            Extrato <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <mask id="mask0_10231_4633" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="16" height="17">
+                    <path d="M19.7002 12.4998L12.0002 4.7998L10.9002 5.8998L16.3002 11.3998L16.7002 11.6998H16.2002H4.2002V13.2998H16.2002H16.7002L16.3002 13.5998L10.9002 19.0998L12.0002 20.1998L19.7002 12.4998Z" fill="black" />
+                </mask>
+                <g mask="url(#mask0_10231_4633)">
+                    <rect y="0.5" width="24" height="24" fill="#003475" />
+                </g>
+            </svg>
+        </a>
+    </div>
+
+    <div id="containerChartPositionSummary" name="containerChartPositionSummary">
+    </div>
+
+    <script type="text/javascript" src="/Content/vendor/chartjs/chartjs-4.4.2.js?v=8"></script>
+    <script type="text/javascript" src="/Content/js/meus-investimentos/td-summary-positions.js?v=8"></script>
+
+</section>
+
+
+
+
+<section class="card-td">
+    <div class="card-td__header">
+        <div class="ultimas-operacoes-select-container">
+
+
+<div class="custom-select-container placeholder placeholder-glow ">
+    <select class="custom-select placeholder placeholder-glow" customSelect="False" id="combo-tipo-operacao" name="combo-tipo-operacao"><option value="">Filtrar opera&#231;&#227;o</option>
+<option value="-1">Todas as opera&#231;&#245;es</option>
+<option value="1">Investimento</option>
+<option value="2">Resgate</option>
+</select>
+</div>
+
+<script type="text/javascript">
+
+      $(function () {
+          let flag = 0;
+
+            const selectElement = document.getElementById("combo-tipo-operacao");
+
+          $(selectElement).click(function (e) {
+              e.stopPropagation();
+              const target = e.target;
+
+              $(target).addClass('custom-select-open')
+              if (flag === 0) {
+                  flag = 1;
+                  $(document).one("click", function () {
+                      flag = 0;
+                      $(target).removeClass('custom-select-open')
+                  });
+              }
+          });
+      });
+</script>
+        </div>
+        <input value="/MeusInvestimentos/ListLastOperations" hidden id="urlUltimasOperacoes"/>
+
+        <a class="botao-grafico placeholder placeholder-glow" href="/Consulta">
+            Consultar <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <mask id="mask0_10231_4633" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="16" height="17">
+                    <path d="M19.7002 12.4998L12.0002 4.7998L10.9002 5.8998L16.3002 11.3998L16.7002 11.6998H16.2002H4.2002V13.2998H16.2002H16.7002L16.3002 13.5998L10.9002 19.0998L12.0002 20.1998L19.7002 12.4998Z" fill="black" />
+                </mask>
+                <g mask="url(#mask0_10231_4633)">
+                    <rect y="0.5" width="24" height="24" fill="#003475" />
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="card-td__body">
+        <div id="containerListaOperacoes" name="containerListaOperacoes"></div>
+
+    </div>
+</section>
+
+<script type="text/javascript" src="/Content/js/meus-investimentos/td-ultimas-operacoes.js?v=8"></script>
+    </section>
+
+
+
+
+<input id="hdnAbaSelecionada" type="hidden" value="1" />
+
+
+<div class="lembrete-investimento-box">
+    <h4 class="titulo-card placeholder placeholder-glow">Operações em andamento</h4>
+    <ul class="td-tabs-links placeholder placeholder-glow" data-tabgroup="td-protocolos-tab-group">
+        <li class="td-tabs-links__item">
+            <a href="#td-titulo-tab-lembrete-investimento" class="td-tabs-links__link active" aria-selected="true" aria-controls="panel-lembrete-1" id="td-titulo-tab-lembrete-investimento" tabindex="0">Investimentos</a>
+        </li>
+        <li class="td-tabs-links__item">
+            <a href="#td-titulo-tab-lembrete-resgate" class="td-tabs-links__link" aria-selected="false" aria-controls="panel-lembrete-2" id="td-titulo-tab-lembrete-resgate" tabindex="1">Resgates</a>
+        </li>
+    </ul>
+    <div id="td-protocolos-tab-group" style="width: 100%">
+        <div role="tabpanel" id="lembretesInvestimento">
+
+
+
+    <div class="empty-state-card">
+        <div class="empty-state-card__icon placeholder placeholder-glow">
+            <img src="/Content/img/icon/alert.svg" alt="alerta" />
+        </div>
+
+        <div class="empty-state-card__text">
+            <h4 class="empty-state-title placeholder placeholder-glow">Voc&#234; n&#227;o possui investimentos em andamento</h4>
+            <p class="empty-state-subtitle placeholder placeholder-glow">Aqui voc&#234; visualizar&#225; os investimentos que est&#227;o aguardando liquida&#231;&#227;o. Confira as oportunidades de investimento clicando no bot&#227;o abaixo.</p>
+        </div>
+
+        <div class="empty-state-card__button">
+            <a id="btnInvestir" href="/Investir" class="primary placeholder placeholder-glow">Investir agora</a>
+            <a href="/Extrato" class="tertiary placeholder placeholder-glow">Ver extrato</a>
+        </div>
+    </div>
+
+
+        </div>
+        <div role="tabpanel" id="lembretesResgate">
+
+
+
+    <div class="empty-state-card">
+        <div class="empty-state-card__icon placeholder placeholder-glow">
+            <img src="/Content/img/icon/alert.svg" alt="alerta" />
+        </div>
+
+        <div class="empty-state-card__text">
+            <h4 class="empty-state-title placeholder placeholder-glow">Voc&#234; n&#227;o possui resgates em andamento</h4>
+            <p class="empty-state-subtitle placeholder placeholder-glow">Aqui voc&#234; visualizar&#225; os resgates que foram solicitados.</p>
+        </div>
+
+        <div class="empty-state-card__button">
+            <a id="btnInvestir" href="/Investir" class="primary placeholder placeholder-glow">Investir agora</a>
+            <a href="/Extrato" class="tertiary placeholder placeholder-glow">Ver extrato</a>
+        </div>
+    </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.lembrete-accordion').on('click', function (e) {
+        const target = e.currentTarget;
+        const accordion = $(target).children('.lembrete-accordion-icons');
+        const open = $(accordion).hasClass('open');
+        const dataTarget = $(target).data('target');
+        console.log(dataTarget, $('#' + dataTarget));
+
+        if (open) {
+            $(accordion).removeClass('open');
+            $('#' + $(target).data('target')).css("display", "none")
+        } else {
+            $(accordion).addClass('open');
+            $('#' + $(target).data('target')).css("display", "block")
+        }
+    });
+</script>
+
+    <div id="td-titulos-tab-group" class="cards-section">
+
+
+
+<div class="lista-titulos-body">
+    <div class="lista-titulos-body__header">
+        <h4 class="lista-titulos-body__title placeholder placeholder-glow">Lista de Títulos</h4>
+    </div>
+
+    <div class="lista-titulos-body__tabs placeholder placeholder-glow">
+                <div class="lista-titulos-body__tabs__item placeholder placeholder-glow" data-category="todos">Todos</div>
+                <div class="lista-titulos-body__tabs__item placeholder placeholder-glow" data-category="selic">Selic</div>
+                <div class="lista-titulos-body__tabs__item placeholder placeholder-glow" data-category="prefixado">Prefixado</div>
+                <div class="lista-titulos-body__tabs__item placeholder placeholder-glow" data-category="inflacao">Infla&#231;&#227;o</div>
+
+    </div>
+
+    <div class="lista-titulos-body__content">
+        <div id="empty-titulos-card">
+
+
+    <div class="empty-state-card">
+        <div class="empty-state-card__icon placeholder placeholder-glow">
+            <img src="/Content/img/icon/alert.svg" alt="alerta" />
+        </div>
+
+        <div class="empty-state-card__text">
+            <h4 class="empty-state-title placeholder placeholder-glow">Nenhum t&#237;tulo</h4>
+            <p class="empty-state-subtitle placeholder placeholder-glow">N&#227;o h&#225; t&#237;tulos dispon&#237;veis para exibi&#231;&#227;o. Confira as oportunidades de investimento clicando no bot&#227;o abaixo.</p>
+        </div>
+
+        <div class="empty-state-card__button">
+            <a id="btnInvestir" href="/Investir" class="primary placeholder placeholder-glow">Investir agora</a>
+            <a href="/Extrato" class="tertiary placeholder placeholder-glow">Ver extrato</a>
+        </div>
+    </div>
+
+
+        </div>
+
+
+<div id="corretora-box">
+    <div id="corretora-card" data-id="1026">
+
+<div class="corretora-card">
+    <span class="corretora-card__details display-none">
+                <img class="corretora-card__details__icon placeholder placeholder-glow" src=/Content/img/logos-corretoras/1026.png alt="Logo Corretora BANCO BTG PACTUAL S/A" aria-hidden="true" />
+
+
+
+        <span>BANCO BTG PACTUAL S/A</span>
+    </span>
+
+    <div class="corretora-card__arrow display-none">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+
+        <div class="card-divider"></div>
+    </div>
+    <div id="titulos-wrapper" data-id="1026">
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1026/103">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro IPCA+
+            </span>
+            <span>
+                2024
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$3.088,11</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$7.034,24</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1026/170">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro IPCA+
+            </span>
+            <span>
+                2026
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$9.057,39</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$11.436,51</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1026/138">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro IPCA+
+            </span>
+            <span>
+                2035
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$212.147,13</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$272.368,53</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1026/160">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro IPCA+
+            </span>
+            <span>
+                2045
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$148.279,14</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$168.265,75</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+                <a data-category="prefixado" href="/MeusInvestimentos/Titulo/1026/174">
+                    <div class="titulo-card Azul">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro Prefixado
+            </span>
+            <span>
+                2029
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$53.007,82</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$68.116,39</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+                <a data-category="selic" href="/MeusInvestimentos/Titulo/1026/164">
+                    <div class="titulo-card Roxo">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro Selic
+            </span>
+            <span>
+                2025
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$3.383,11</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$5.021,65</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+                <a data-category="selic" href="/MeusInvestimentos/Titulo/1026/172">
+                    <div class="titulo-card Roxo">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro Selic
+            </span>
+            <span>
+                2027
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$16.609,97</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$23.838,26</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+                <a data-category="selic" href="/MeusInvestimentos/Titulo/1026/178">
+                    <div class="titulo-card Roxo">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro Selic
+            </span>
+            <span>
+                2029
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$55.859,89</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$60.432,70</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+
+    </div>
+
+
+<div class="total-card placeholder placeholder-glow">
+    <span class="total-card__title">Total da corretora</span>
+
+    <div class="total-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span class="valor-investido-todos valor-investido">R$501.432,56</span>
+            <span class="valor-investido-selic valor-investido display-none">R$75.852,97</span>
+            <span class="valor-investido-prefixado valor-investido display-none">R$53.007,82</span>
+            <span class="valor-investido-inflacao valor-investido display-none">R$372.571,77</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span class="valor-bruto-todos valor-bruto-lista">R$616.514,03</span>
+            <span class="valor-bruto-selic valor-bruto-lista display-none">R$75.852,97</span>
+            <span class="valor-bruto-prefixado valor-bruto-lista display-none">R$68.116,39</span>
+            <span class="valor-bruto-inflacao valor-bruto-lista display-none">R$459.105,03</span>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<div id="corretora-box">
+    <div id="corretora-card" data-id="1570">
+
+<div class="corretora-card">
+    <span class="corretora-card__details display-none">
+                <img class="corretora-card__details__icon placeholder placeholder-glow" src=/Content/img/logos-corretoras/1570.png alt="Logo Corretora CAIXA ECONOMICA FEDERAL" aria-hidden="true" />
+
+
+
+        <span>CAIXA ECONOMICA FEDERAL</span>
+    </span>
+
+    <div class="corretora-card__arrow display-none">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+
+        <div class="card-divider"></div>
+    </div>
+    <div id="titulos-wrapper" data-id="1570">
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1570/103">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__details">
+        <div class="titulo-card__bar"></div>
+        <div class="titulo-card__title">
+            <span>
+                 Tesouro IPCA+
+            </span>
+            <span>
+                2024
+            </span>
+        </div>
+        <div class="titulo-card__arrow">
+            <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+        </div>
+    </div>
+
+    <div class="titulo-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span>R$4.991,90</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span>R$12.730,69</span>
+        </div>
+    </div>
+</div>
+
+                </a>
+
+    </div>
+
+
+<div class="total-card placeholder placeholder-glow">
+    <span class="total-card__title">Total da corretora</span>
+
+    <div class="total-card__values">
+        <div>
+            <span>Valor investido</span>
+            <span class="valor-investido-todos valor-investido">R$4.991,90</span>
+            <span class="valor-investido-selic valor-investido display-none">R$0,00</span>
+            <span class="valor-investido-prefixado valor-investido display-none">R$0,00</span>
+            <span class="valor-investido-inflacao valor-investido display-none">R$4.991,90</span>
+        </div>
+        <div>
+            <span>Valor bruto</span>
+            <span class="valor-bruto-todos valor-bruto-lista">R$12.730,69</span>
+            <span class="valor-bruto-selic valor-bruto-lista display-none">R$0,00</span>
+            <span class="valor-bruto-prefixado valor-bruto-lista display-none">R$0,00</span>
+            <span class="valor-bruto-inflacao valor-bruto-lista display-none">R$12.730,69</span>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+    </div>
+
+    <div class="total-divider"></div>
+
+
+
+<div class="total-consolidado-wrapper">
+    <div class="total-card placeholder placeholder-glow">
+        <span class="total-card__title">Total consolidado</span>
+
+        <div class="total-card__values">
+            <div>
+                <span>Valor investido</span>
+                <span class="valor-investido-todos valor-investido">R$506.424,46</span>
+                <span class="valor-investido-selic valor-investido display-none">R$75.852,97</span>
+                <span class="valor-investido-prefixado valor-investido display-none">R$53.007,82</span>
+                <span class="valor-investido-inflacao valor-investido display-none">R$377.563,67</span>
+            </div>
+            <div>
+                <span>Valor bruto</span>
+                <span class="valor-bruto-todos valor-bruto-lista">R$629.244,72</span>
+                <span class="valor-bruto-selic valor-bruto-lista display-none">R$75.852,97</span>
+                <span class="valor-bruto-prefixado valor-bruto-lista display-none">R$68.116,39</span>
+                <span class="valor-bruto-inflacao valor-bruto-lista display-none">R$471.835,72</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+    </div>
+
+    <div id="container-lista-titulos" class="td-titulos-tabs ">
+
+
+
+<div class="lista-titulos-body">
+    <div class="lista-titulos-body__header">
+        <h4 class="lista-titulos-body__title placeholder placeholder-glow">Lista de Títulos</h4>
+    </div>
+
+    <div class="lista-titulos-body__tabs placeholder placeholder-glow">
+                <div class="lista-titulos-body__tabs__item placeholder placeholder-glow" data-category="todos">Todos</div>
+                <div class="lista-titulos-body__tabs__item placeholder placeholder-glow" data-category="selic">Selic</div>
+                <div class="lista-titulos-body__tabs__item placeholder placeholder-glow" data-category="prefixado">Prefixado</div>
+                <div class="lista-titulos-body__tabs__item placeholder placeholder-glow" data-category="inflacao">Infla&#231;&#227;o</div>
+
+    </div>
+
+    <div class="lista-titulos-body__content">
+        <div id="empty-titulos-card">
+
+
+    <div class="empty-state-card">
+        <div class="empty-state-card__icon placeholder placeholder-glow">
+            <img src="/Content/img/icon/alert.svg" alt="alerta" />
+        </div>
+
+        <div class="empty-state-card__text">
+            <h4 class="empty-state-title placeholder placeholder-glow">Nenhum t&#237;tulo</h4>
+            <p class="empty-state-subtitle placeholder placeholder-glow">N&#227;o h&#225; t&#237;tulos dispon&#237;veis para exibi&#231;&#227;o. Confira as oportunidades de investimento clicando no bot&#227;o abaixo.</p>
+        </div>
+
+        <div class="empty-state-card__button">
+            <a id="btnInvestir" href="/Investir" class="primary placeholder placeholder-glow">Investir agora</a>
+            <a href="/Extrato" class="tertiary placeholder placeholder-glow">Ver extrato</a>
+        </div>
+    </div>
+
+
+        </div>
+
+
+<div id="corretora-box">
+    <div id="corretora-card" data-id="1026">
+
+<div class="corretora-card">
+    <span class="corretora-card__details display-none">
+                <img class="corretora-card__details__icon placeholder placeholder-glow" src=/Content/img/logos-corretoras/1026.png alt="Logo Corretora BANCO BTG PACTUAL S/A" aria-hidden="true" />
+
+
+
+        <span>BANCO BTG PACTUAL S/A</span>
+    </span>
+
+
+    <span class="corretora-card__infos display-none">Valor investido</span>
+
+
+    <span class="corretora-card__infos display-none">Valor bruto</span>
+
+
+    <div class="corretora-card__arrow display-none">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+
+        <div class="card-divider"></div>
+    </div>
+    <div id="titulos-wrapper" data-id="1026">
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1026/103">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro IPCA+
+        </span>
+        <span>
+            2024
+        </span>
+    </span>
+
+    <span>R$3.088,11</span>
+    <span>R$7.034,24</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1026/170">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro IPCA+
+        </span>
+        <span>
+            2026
+        </span>
+    </span>
+
+    <span>R$9.057,39</span>
+    <span>R$11.436,51</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1026/138">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro IPCA+
+        </span>
+        <span>
+            2035
+        </span>
+    </span>
+
+    <span>R$212.147,13</span>
+    <span>R$272.368,53</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1026/160">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro IPCA+
+        </span>
+        <span>
+            2045
+        </span>
+    </span>
+
+    <span>R$148.279,14</span>
+    <span>R$168.265,75</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+                <a data-category="prefixado" href="/MeusInvestimentos/Titulo/1026/174">
+                    <div class="titulo-card Azul">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro Prefixado
+        </span>
+        <span>
+            2029
+        </span>
+    </span>
+
+    <span>R$53.007,82</span>
+    <span>R$68.116,39</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+                <a data-category="selic" href="/MeusInvestimentos/Titulo/1026/164">
+                    <div class="titulo-card Roxo">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro Selic
+        </span>
+        <span>
+            2025
+        </span>
+    </span>
+
+    <span>R$3.383,11</span>
+    <span>R$5.021,65</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+                <a data-category="selic" href="/MeusInvestimentos/Titulo/1026/172">
+                    <div class="titulo-card Roxo">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro Selic
+        </span>
+        <span>
+            2027
+        </span>
+    </span>
+
+    <span>R$16.609,97</span>
+    <span>R$23.838,26</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+                <a data-category="selic" href="/MeusInvestimentos/Titulo/1026/178">
+                    <div class="titulo-card Roxo">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro Selic
+        </span>
+        <span>
+            2029
+        </span>
+    </span>
+
+    <span>R$55.859,89</span>
+    <span>R$60.432,70</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+
+    </div>
+
+
+<div class="total-card placeholder placeholder-glow">
+    <span>Total da corretora</span>
+
+    <span class="valor-investido-todos valor-investido">R$501.432,56</span>
+    <span class="valor-investido-selic valor-investido display-none">R$75.852,97</span>
+    <span class="valor-investido-prefixado valor-investido display-none">R$53.007,82</span>
+    <span class="valor-investido-inflacao valor-investido display-none">R$372.571,77</span>
+
+    <span class="valor-bruto-todos valor-bruto-lista">R$616.514,03</span>
+    <span class="valor-bruto-selic valor-bruto-lista display-none">R$75.852,97</span>
+    <span class="valor-bruto-prefixado valor-bruto-lista display-none">R$68.116,39</span>
+    <span class="valor-bruto-inflacao valor-bruto-lista display-none">R$459.105,03</span>
+</div>
+
+</div>
+
+<div id="corretora-box">
+    <div id="corretora-card" data-id="1570">
+
+<div class="corretora-card">
+    <span class="corretora-card__details display-none">
+                <img class="corretora-card__details__icon placeholder placeholder-glow" src=/Content/img/logos-corretoras/1570.png alt="Logo Corretora CAIXA ECONOMICA FEDERAL" aria-hidden="true" />
+
+
+
+        <span>CAIXA ECONOMICA FEDERAL</span>
+    </span>
+
+
+    <span class="corretora-card__infos display-none">Valor investido</span>
+
+
+    <span class="corretora-card__infos display-none">Valor bruto</span>
+
+
+    <div class="corretora-card__arrow display-none">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+
+        <div class="card-divider"></div>
+    </div>
+    <div id="titulos-wrapper" data-id="1570">
+                <a data-category="inflacao" href="/MeusInvestimentos/Titulo/1570/103">
+                    <div class="titulo-card Laranja">
+    <div class="titulo-card__bar"></div>
+    <span class="titulo-card__title">
+        <span>
+             Tesouro IPCA+
+        </span>
+        <span>
+            2024
+        </span>
+    </span>
+
+    <span>R$4.991,90</span>
+    <span>R$12.730,69</span>
+
+    <div class="titulo-card__arrow">
+        <img src="/Content/img/icon/td-arrow-up.svg" alt="arrow" />
+    </div>
+</div>
+
+                </a>
+
+    </div>
+
+
+<div class="total-card placeholder placeholder-glow">
+    <span>Total da corretora</span>
+
+    <span class="valor-investido-todos valor-investido">R$4.991,90</span>
+    <span class="valor-investido-selic valor-investido display-none">R$0,00</span>
+    <span class="valor-investido-prefixado valor-investido display-none">R$0,00</span>
+    <span class="valor-investido-inflacao valor-investido display-none">R$4.991,90</span>
+
+    <span class="valor-bruto-todos valor-bruto-lista">R$12.730,69</span>
+    <span class="valor-bruto-selic valor-bruto-lista display-none">R$0,00</span>
+    <span class="valor-bruto-prefixado valor-bruto-lista display-none">R$0,00</span>
+    <span class="valor-bruto-inflacao valor-bruto-lista display-none">R$12.730,69</span>
+</div>
+
+</div>
+
+    </div>
+
+    <div class="total-divider"></div>
+
+
+
+<div class="total-consolidado-wrapper">
+    <div class="total-card consolidado placeholder placeholder-glow">
+        <span>Total consolidado</span>
+
+        <span class="valor-investido-todos valor-investido">R$506.424,46</span>
+        <span class="valor-investido-selic valor-investido display-none">R$75.852,97</span>
+        <span class="valor-investido-prefixado valor-investido display-none">R$53.007,82</span>
+        <span class="valor-investido-inflacao valor-investido display-none">R$377.563,67</span>
+
+        <span class="valor-bruto-todos valor-bruto-lista">R$629.244,72</span>
+        <span class="valor-bruto-selic valor-bruto-lista display-none">R$75.852,97</span>
+        <span class="valor-bruto-prefixado valor-bruto-lista display-none">R$68.116,39</span>
+        <span class="valor-bruto-inflacao valor-bruto-lista display-none">R$471.835,72</span>
+    </div>
+</div>
+
+</div>
+
+
+    </div>
+</div>
+
+
+
+<input type="hidden" id="tipo-meusinvestimento" />
+
+
+<form action="/MeusInvestimentos" id="__AjaxAntiForgeryForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="II5tbspnONv067lymTKyRv7Ca_ABIESWwJUB2Bnkx2kBHA_LfhOl1jIWQkd9Vh0hBkC8hCCjb32Na8hoYw9DhOTGD9uJciXRuUmYGQAbP5ShmZqZ_RbJ_t2gQOqz7JH3PZoKZzSdOfWX8jjTl-4vXw2" /></form>        <!-- Modal sessão Expirada -->
+        <div id="modalLoginExpired" class="td-recuperar-senha-modal" aria-live="assertive" tabindex="-1" role="dialog" autofocus>
+            <div class="td-recuperar-senha-modal__content">
+                <h2 class="td-recuperar-senha-modal__title">
+                    Sessão expirada!
+                </h2>
+                <button type="button" class="btn-login-expired btn btn--primary btn--login" id="btnRecoverContinue" tabindex="0">OK</button>
+            </div>
+        </div>
+        <div class="td-sms-loading">
+    <div class="lds-spinner" style="position: fixed; top: 50%; left: 50%; margin-left: -3.2rem; margin-top: -3.2rem;">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+
+    </main>
+
+
+    <footer class="td-hidden-desk td-hidden-mobile">
+        &nbsp;
+    </footer>
+    	<script src="/bundles/js.js?v=668oSypnYt_edIwWQJ8c-W50D0WE5OYU9K8mmNeXiOE1?v=1.19.8957.19322"></script>
+
+    	<script src="/bundles/td-util.js?v=PVUtF7WsY9wolayNyvWg9BqWGcnYrMhLsMpxNvnZ4ro1?v=1.19.8957.19322"></script>
+
+
+
+    <script type="module" src="/Content/vendor/chart.umd.min.js"></script>
+
+
+    	<script src="/Content/vendor/chart.bundle.min.js?v=1.19.8957.19322"></script>
+	<script src="/Content/js/meus-investimentos/td-meus-investimentos.js??v=1.19.8957.19322"></script>
+	<script src="/Content/js/banner-home/banner-home.js?v=1.19.8957.19322"></script>
+
+
+    <script type="text/javascript">
+        function afterLoad() {
+            if ($(".principal-listaultimasoperacoes")[0] && $(".position-summary-box__content")[0]) {
+                $('.custom-select').removeClass('placeholder placeholder-glow');
+                $('.custom-select-container').removeClass('placeholder placeholder-glow');
+                $('.titulo-card-patrimonio').removeClass('placeholder placeholder-glow');
+                $('.titulo-corretora').removeClass('placeholder placeholder-glow');
+                $('.current').removeClass('placeholder placeholder-glow');
+                $('.botao-grafico').removeClass('placeholder placeholder-glow');
+                $('.td-tabs-links').removeClass('placeholder placeholder-glow');
+                $('.titulo-card').removeClass('placeholder placeholder-glow');
+                $('.card-investimento-box__info__protocol').removeClass('placeholder placeholder-glow');
+                $('.card-investimento-box__info__title').removeClass('placeholder placeholder-glow');
+                $('.card-investimento-box__info__total').removeClass('placeholder placeholder-glow');
+                $('.empty-state-title').removeClass('placeholder placeholder-glow');
+                $('.empty-state-subtitle').removeClass('placeholder placeholder-glow');
+                $('.primary').removeClass('placeholder placeholder-glow');
+                $('.tertiary').removeClass('placeholder placeholder-glow');
+                $('.round').removeClass('placeholder placeholder-glow');
+                $('.round-sticky').removeClass('placeholder placeholder-glow');
+                $('.empty-state-card__icon').removeClass('placeholder placeholder-glow');
+                $('.menu-subtitle').removeClass('placeholder placeholder-glow');
+                $('.menu-subtitle-sticky').removeClass('placeholder placeholder-glow');
+                $('.lista-titulos-body__tabs').removeClass('placeholder placeholder-glow');
+                $('.lista-titulos-body__tabs__item').removeClass('placeholder placeholder-glow');
+                $('.corretora-card__details__icon').removeClass('placeholder placeholder-glow');
+                $('.corretora-card__details').removeClass('display-none');
+                $('.corretora-card__arrow').removeClass('display-none');
+                $('.corretora-card__infos').removeClass('display-none');
+                $('.total-card').removeClass('placeholder placeholder-glow');
+                $('.lista-titulos-body__title').removeClass('placeholder placeholder-glow');
+                $('.informacoes-titulo').removeClass('placeholder placeholder-glow');
+                $('.informacoes-descricao-titulos').removeClass('placeholder placeholder-glow');
+                $('.informacoes-descricao-agente-custodia').removeClass('placeholder placeholder-glow');
+                $('.informacoes-descricao-dataHora').removeClass('placeholder placeholder-glow');
+                $('.icone').removeClass('placeholder placeholder-glow');
+                $('.valor-operacao').removeClass('placeholder placeholder-glow');
+                document.getElementById("id_principal-listaultimasoperacoes_skeleton")?.remove();
+                $('.principal-listaultimasoperacoes').removeClass('display-none');
+                document.getElementById("id_position-summary-box__content__skeleton")?.remove();
+                document.getElementById("id_titulo-corretora__container_skeleton")?.remove();
+                $('.titulo-corretora__container').removeClass('display-none');
+                $('.position-summary-box__content').removeClass('display-none');
+                $('.card-investimento-box__bar').removeClass('placeholder placeholder-glow');
+                $('.card-investimento-box__etapas__etapa').removeClass('placeholder placeholder-glow');
+                $('.card-investimento-box__etapas__info__subtitle').removeClass('placeholder placeholder-glow');
+                $('.card-investimento-box__etapas__info__status').removeClass('placeholder placeholder-glow');
+                $('.card-investimento-box__arrow').removeClass('placeholder placeholder-glow');
+            }
+        }
+
+        var positions = JSON.parse("[{\"FinIndxs\":{\"cd\":22,\"nm\":\"IPCA+\"},\"prtflCmpnPctg\":74.98,\"invstmtAmt\":471835.72},{\"FinIndxs\":{\"cd\":17,\"nm\":\"SELIC\"},\"prtflCmpnPctg\":14.19,\"invstmtAmt\":89292.61},{\"FinIndxs\":{\"cd\":19,\"nm\":\"PREFIXADO\"},\"prtflCmpnPctg\":10.83,\"invstmtAmt\":68116.39}]");
+
+        $(document).ready(function () {
+            $('#lembretesResgate').css('display', 'none')
+        })
+
+        $("#td-titulo-tab-lembrete-resgate").click(function () {
+            $("#lembretesResgate").css("display", "flex");
+            $("#lembretesInvestimento").css("display", "none");
+        });
+
+        $("#td-titulo-tab-lembrete-investimento").click(function () {
+            $("#lembretesInvestimento").css("display", "flex");
+            $("#lembretesResgate").css("display", "none");
+        });
+
+        new ListaTitulos();
+
+        new BannerHome().init();
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(function () {
+
+            updateCartBadge(0);
+
+            $('.td-investir-snackbar__close').click(function () {
+                $(".td-investir-snackbar").fadeOut(300);
+            });
+
+        });
+
+        $(function () {
+
+            let alterna = $("#usuario");
+            $(alterna).css("display", "none");
+
+            $("#menuDoUsuario").click(function () {
+
+                if ($(alterna).css("display") == "none") {
+
+                    $(alterna).css("display", "block");
+
+                } else {
+
+                    $(alterna).css("display", "none");
+
+                }
+            });
+
+            let quantidadeDoCarrinho = $("#carrinhoQuantidade").attr("data-valor-carrinho");
+
+            if (quantidadeDoCarrinho >= 2) {
+
+                $("#carrinhoHeader").attr("aria-label", "Carrinho: " + quantidadeDoCarrinho + " itens");
+                $("#carrinhoQuantidade").removeClass('display-none-general');
+
+            } else {
+                if (quantidadeDoCarrinho <= 0) {
+                    $("#carrinhoQuantidade").addClass('display-none-general');
+                } else {
+                    $("#carrinhoQuantidade").removeClass('display-none-general');
+                }
+                $("#carrinhoHeader").attr("aria-label", "Carrinho: " + quantidadeDoCarrinho + " item");
+
+            }
+
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const tabs = document.querySelectorAll(".homePage");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", changeTabs);
+            });
+        });
+
+        document.querySelector(".td-nav-meus-dados__user").addEventListener("click", function (event) {
+            let value = event.target.getAttribute("aria-expanded");
+
+            event.target.setAttribute("aria-expanded", (value == "false") ? "true" : "false");
+        });
+
+        $('#modalLoginExpired').on('shown.bs.modal', function (e) {
+            document.querySelector('#modalLoginExpired').getElementsByClassName('td-recuperar-senha-modal').focus();
+        })
+
+        // add all the elements inside modal which you want to make focusable
+        const focusableElements222 = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        const modal222 = document.querySelector('#modalLoginExpired'); // select the modal by it's id
+
+        const firstFocusableElement222 = modal222.querySelectorAll(focusableElements222)[0]; // get first element to be focused inside modal
+        const focusableContent222 = modal222.querySelectorAll(focusableElements222);
+        const lastFocusableElement222 = focusableContent222[focusableContent222.length - 1]; // get last element to be focused inside modal
+
+        document.addEventListener('keydown', function (e) {
+            let isTabPressed = e.key === 'Tab' || e.keyCode === 9 || e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 40;
+
+            if (!isTabPressed) {
+                return;
+            }
+
+            if (e.shiftKey) { // if shift key pressed for shift + tab combination
+                if (document.activeElement === firstFocusableElement222) {
+                    lastFocusableElement222.focus(); // add focus for the last focusable element
+                    e.preventDefault();
+                }
+            } else { // if tab key is pressed
+                if (document.activeElement === lastFocusableElement222) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+                    firstFocusableElement222.focus(); // add focus for the first focusable element
+                    e.preventDefault();
+                }
+            }
+        });
+
+        firstFocusableElement222.focus();
+
+    </script>
+</body>
+</html>

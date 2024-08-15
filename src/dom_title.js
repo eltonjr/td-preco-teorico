@@ -18,7 +18,7 @@ class TitlePage {
 	 */
 	constructor(doc, cfg) {
 		this.doc = doc;
-		this.formatter = buildFormatter(cfg.formatter);
+		this.formatter = new Formatter(cfg.formatter);
 
 		const table = this.doc.querySelector("table.saldo-table-container");
 		const tbody = table.getElementsByTagName("tbody");

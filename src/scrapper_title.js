@@ -43,15 +43,17 @@ class ScrapperTitlePage {
 			return res;
 		});
 
-		return Promise.all(rowsPromises).then(v => {
-			if (v.some(isNaN)) {
-				return "Erro";
-			}
+		return rowsPromises;
 
-			return v
-				.reduce((a, b) => { return a + b; }, 0)
-				.toFixed(2);
-		});
+		// return Promise.all(rowsPromises).then(v => {
+		// 	if (v.some(isNaN)) {
+		// 		return "Erro";
+		// 	}
+
+		// 	return v
+		// 		.reduce((a, b) => { return a + b; }, 0)
+		// 		.toFixed(2);
+		// });
 	}
 
 	/**
@@ -62,11 +64,15 @@ class ScrapperTitlePage {
 	scrapDetailsPage(payload, token) {
 		const response = this.fetcher.getDetails(payload, token);
 		return response
-			.then(o => this.scrapDetailsResponse(o.view));
+			.then(o => this.scrapDetailsResponse(o));
 	}
 
-	scrapDetailsResponse(html) {
-		const modal = this.domparser.parseFromString(html, "text/html");
+	scrapDetailsResponse(res) {
+		if (!res.success) {
+			return res.errorMessage || "-";
+		}
+
+		const modal = this.domparser.parseFromString(res.view, "text/html");
 		const theoreticalSpan = modal.querySelector(".dataset2-legend .money-value");
 		const valueStr = (theoreticalSpan || {}).textContent;
 		return ScrapperUtils.brlToNumber(valueStr);
