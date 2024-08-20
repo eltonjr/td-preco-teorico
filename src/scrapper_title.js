@@ -44,16 +44,6 @@ class ScrapperTitlePage {
 		});
 
 		return rowsPromises;
-
-		// return Promise.all(rowsPromises).then(v => {
-		// 	if (v.some(isNaN)) {
-		// 		return "Erro";
-		// 	}
-
-		// 	return v
-		// 		.reduce((a, b) => { return a + b; }, 0)
-		// 		.toFixed(2);
-		// });
 	}
 
 	/**

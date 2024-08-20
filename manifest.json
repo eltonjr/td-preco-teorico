@@ -17,18 +17,19 @@
   "content_scripts": [
     {
       "matches": [
-        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Titulo/*"
+        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Titulo/*",
+        "http://localhost/MeusInvestimentos/Titulo/*"
       ],
       "js": [
         "src/polyfill.js",
-		"src/config.js",
-		"src/logger.js",
-		"src/cache.js",
-		"src/fetcher.js",
+        "src/config.js",
+        "src/logger.js",
+        "src/cache.js",
+        "src/fetcher.js",
         "src/dom_utils.js",
-		"src/dom_title.js",
-		"src/scrapper_utils.js",
-		"src/scrapper_title.js",
+        "src/dom_title.js",
+        "src/scrapper_utils.js",
+        "src/scrapper_title.js",
         "src/page_title.js"
       ],
       "css": []
@@ -36,19 +37,21 @@
     {
       "matches": [
         "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos",
-        "*://portalinvestidor.tesourodireto.com.br/Acompanhar"
+        "*://portalinvestidor.tesourodireto.com.br/Acompanhar",
+        "http://localhost/Acompanhar",
+        "http://localhost/MeusInvestimentos"
       ],
       "js": [
         "src/polyfill.js",
-		"src/config.js",
-		"src/logger.js",
-		"src/cache.js",
-		"src/fetcher.js",
+        "src/config.js",
+        "src/logger.js",
+        "src/cache.js",
+        "src/fetcher.js",
         "src/dom_utils.js",
-		"src/dom_main.js",
-		"src/scrapper_utils.js",
-		"src/scrapper_title.js",
-		"src/scrapper_main.js",
+        "src/dom_main.js",
+        "src/scrapper_utils.js",
+        "src/scrapper_title.js",
+        "src/scrapper_main.js",
         "src/page_main.js"
       ],
       "css": []
@@ -57,7 +60,7 @@
   "options_ui": {
     "page": "src/options/options.html"
   },
-	"devtools_page": "src/devtools/devtools.html",
+    "devtools_page": "src/devtools/devtools.html",
   "permissions": [
     "storage"
   ],

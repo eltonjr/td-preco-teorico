@@ -20,7 +20,7 @@ class Cache {
 	}
 
 	set(key, value) {
-		this.cache[key]= value;
+		this.cache[key] = value;
 	}
 }
 

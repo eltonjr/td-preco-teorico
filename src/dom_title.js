@@ -48,7 +48,7 @@ class TitlePage {
 	 *
 	 * @param {Promise} promise an async theoretical value
 	 */
-	appendToTop(promise) {
+	appendToTop(promises) {
 		const span1 = this.doc.createElement("span");
 		span1.setAttribute("class", "td-meu-investimento-titulo--valor");
 		span1.appendChild(this.doc.createTextNode(labels.theoreticalBruteValue));
@@ -62,8 +62,9 @@ class TitlePage {
 
 		this.doc.querySelector(".td-meu-investimento-datalhe-posicao").appendChild(span1);
 
-		promise.then(value => {
-			text.textContent = this.formatter.format(value);
+		Promise.all(promises).then(v => {
+			const sum = sumArray(v);
+			text.textContent = this.formatter.format(sum);
 		});
 	}
 
@@ -83,6 +84,9 @@ class TitlePage {
 		row.insertBefore(theoreticalCell, row.getElementsByTagName("td")[this.secondHeaderSize-1]);
 
 		promise.then(value => {
+			if (isNaN(value)) {
+				theoreticalCell.setAttribute("style", `background-color: ${color("ERROR")};`);
+			}
 			text.textContent = this.formatter.format(value);
 		});
 	}

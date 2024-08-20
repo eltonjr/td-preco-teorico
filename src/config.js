@@ -9,6 +9,5 @@ async function LoadConfig() {
 		uncached: false
 	});
 
-	console.log("loaded cfg", cfg);
 	return cfg;
 }

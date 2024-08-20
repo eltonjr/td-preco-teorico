@@ -21,6 +21,8 @@ const color = title => {
 		return "#ffc914";
 	} else if (title.toUpperCase().includes("PREFIXADO")) {
 		return "#119da4";
+	} else if (title === 'ERROR') {
+		return "#ff2727";
 	} else { // novelty color used in newly created column
 		return "#abfabf";
 	}

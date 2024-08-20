@@ -6,6 +6,7 @@ class Logger {
 	constructor(cfg) {
 		this.enabled = cfg.debug;
 		this.log("Logger created: ", this.enabled);
+		this.log("Config: ", cfg);
 	}
 
 	log(...args) {

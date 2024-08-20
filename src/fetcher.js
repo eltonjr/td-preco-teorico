@@ -13,7 +13,7 @@ class Fetcher {
 		const cached = this.cache.get(url);
 		if (cached) {
 			this.logger.log(`get ${url}: cached`);
-			return cached;
+			return Promise.resolve(cached);
 		}
 
 		const promise = this.content.fetch(url, {
@@ -21,14 +21,13 @@ class Fetcher {
 			redirect: 'follow'
 		});
 
-		this.cache.set(url, promise);
-
 		return promise
+			.then(r => r.text())
 			.then(r => {
-				this.logger.log(`get ${url} fetched: ${r.status}`);
+				this.logger.log(`get ${url}: fetched`);
+				this.cache.set(url, r);
 				return r;
-			})
-			.then(r => r.text());
+			});
 	}
 
 	getDetails(payload, token) {
@@ -36,7 +35,7 @@ class Fetcher {
 		const cached = this.cache.get(key);
 		if (cached) {
 			this.logger.log(`post ${key}: cached`);
-			return cached;
+			return Promise.resolve(cached);
 		}
 
 		const promise = this.content.fetch("/MeusInvestimentos/LoadDetalhe", {
@@ -50,14 +49,13 @@ class Fetcher {
 			}
 		});
 
-		this.cache.set(key, promise);
-
 		return promise
+			.then(r => r.json())
 			.then(r => {
-				this.logger.log(`post ${key} fetched: ${r.status}`);
+				this.logger.log(`post ${key}: fetched`);
+				this.cache.set(key, r);
 				return r;
-			})
-			.then(r => r.json());
+			});
 	}
 
 	buildDetailsKey(payload) {

@@ -19,7 +19,7 @@ class MainPage {
 		this.formatter = new Formatter(cfg.formatter);
 		this.debug = cfg.debug;
 		this.logger = logger;
-		this.logger.log("MainPage enabled, debug:", debug);
+		this.logger.log("MainPage loaded");
 
 		const titleDiv = this.doc.createElement("div");
 		titleDiv.setAttribute("id", "td-preco-teorico");
@@ -100,12 +100,12 @@ class MainPage {
 
 			if (this.debug) {
 				const total = byTitle[title].length;
-				this.logger.log(`${title} Total promises: ${total}`);
+				this.logger.log(`Brokers by title: ${title}: ${total}`);
 				let done = 0;
 				byTitle[title].forEach(p => {
 					p.then(() => {
 						done++;
-						this.logger.log(`${title} ${done}/${total}`);
+						this.logger.log(`Progress: ${title} (${done}/${total}) (?/?)`);
 						titleValue.textContent = `${labels.processing} (${done}/${total}) (?/?)`;
 					});
 				});
@@ -115,13 +115,13 @@ class MainPage {
 				const tpf = titlePs.flat();
 
 				if (this.debug) {
-					this.logger.log(`${title} all brokers resolved: ${tpf.length}`);
+					this.logger.log(`Brokers resolved. Contribs by title: ${title}: ${tpf.length}`);
 					const total = tpf.length;
 					let done = 0;
 					tpf.forEach(p => {
 						p.then(() => {
 							done++;
-							this.logger.log(`${title} ${done}/${total}`);
+							this.logger.log(`Progress: ${title} (-/-) (${done}/${total})`);
 							titleValue.textContent = `${labels.processing} (${titlePs.length}/${titlePs.length}) (${done}/${total})`;
 						});
 					});
@@ -130,7 +130,7 @@ class MainPage {
 				Promise.all(tpf).then(v => {
 					setTimeout(() => {
 						const sum = sumArray(v);
-						this.logger.log(`${title} all tpf resolved: ${v.length}`);
+						this.logger.log(`Contribs resolved: ${title}: ${v.length}`);
 						span3.setAttribute("data-gross-amount", sum);
 						span3.innerHTML = "";
 						span3.appendChild(titleValue);
@@ -144,10 +144,7 @@ class MainPage {
 		this.doc.querySelector("#td-preco-teorico").appendChild(div);
 
 		Promise.all(Object.values(byTitle).flat()).then(v => {
-			this.logger.log("main card got all promises");
 			Promise.all(v.flat()).then(vv => {
-				this.logger.log("main card got all inner promises");
-				this.logger.log(vv);
 				let sum = sumArray(vv);
 				if (isNaN(sum)) {
 					sum = `${labels.partial}: ${sumArrayValids(vv)}`;
