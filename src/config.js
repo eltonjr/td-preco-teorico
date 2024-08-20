@@ -6,6 +6,7 @@ async function LoadConfig() {
 	const cfg = await browser.storage.local.get({
 		formatter: "br",
 		debug: false,
+		trace: false,
 		uncached: false
 	});
 

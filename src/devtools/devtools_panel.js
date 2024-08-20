@@ -8,7 +8,7 @@ console.log("devtools panel loaded");
 // 	document.body.innerHTML += `<div>${request.request.url}</div>`;
 // });
 
-const attrs = ["debug", "uncached"];
+const attrs = ["debug", "trace", "uncached"];
 
 attrs.forEach(attr => {
 	document.querySelector(`#${attr}`).addEventListener("change", updateAttr(attr));
