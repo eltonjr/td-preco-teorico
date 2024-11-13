@@ -1,7 +1,0 @@
-<svg id="icon_clock" data-name="icon / clock" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-  <rect id="container" width="40" height="40" fill="none"/>
-  <g id="Group" transform="translate(7 7)">
-    <circle id="Oval" cx="13" cy="13" r="13" fill="none" stroke="#237131" stroke-miterlimit="10" stroke-width="1.5"/>
-    <path id="Path_10" data-name="Path 10" d="M7.218,0V9.382H0" transform="translate(7 5)" fill="none" stroke="#237131" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
-  </g>
-</svg>
