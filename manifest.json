@@ -1,45 +1,69 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Tesouro Direto - Preço teórico",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
   "icons": {
-    "64": "assets/td-icon-64.png"
+    "16": "assets/td-icon-16.png",
+    "32": "assets/td-icon-32.png",
+    "48": "assets/td-icon-48.png",
+    "64": "assets/td-icon-64.png",
+    "128": "assets/td-icon-128.png"
   },
   "developer": {
     "name": "Elton Hoffmann",
     "url": "https://github.com/eltonjr"
   },
-  "author": "Elton Hoffmann",
   "content_scripts": [
     {
       "matches": [
-        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Titulo/*"
+        "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos/Titulo/*",
+        "http://localhost/MeusInvestimentos/Titulo/*"
       ],
       "js": [
         "src/polyfill.js",
-        "src/dom.js",
-        "src/theoretical.js",
+        "src/config.js",
+        "src/logger.js",
+        "src/cache.js",
+        "src/fetcher.js",
+        "src/dom_utils.js",
+        "src/dom_title.js",
+        "src/scrapper_utils.js",
+        "src/scrapper_title.js",
         "src/page_title.js"
-      ]
+      ],
+      "css": []
     },
     {
       "matches": [
         "*://portalinvestidor.tesourodireto.com.br/MeusInvestimentos",
-        "*://portalinvestidor.tesourodireto.com.br/Acompanhar"
+        "*://portalinvestidor.tesourodireto.com.br/Acompanhar",
+        "http://localhost/Acompanhar",
+        "http://localhost/MeusInvestimentos"
       ],
       "js": [
         "src/polyfill.js",
-        "src/dom.js",
-        "src/theoretical.js",
+        "src/config.js",
+        "src/logger.js",
+        "src/cache.js",
+        "src/fetcher.js",
+        "src/dom_utils.js",
+        "src/dom_main.js",
+        "src/scrapper_utils.js",
+        "src/scrapper_title.js",
+        "src/scrapper_main.js",
         "src/page_main.js"
-      ]
+      ],
+      "css": []
     }
   ],
   "options_ui": {
     "page": "src/options/options.html"
   },
-  "permissions": ["storage"],
+  "devtools_page": "src/devtools/devtools.html",
+  "permissions": [
+    "storage"
+  ],
   "browser_specific_settings": {
     "gecko": {
       "id": "{f9c2e98c-0e7b-4732-919f-f1bc3116e836}"

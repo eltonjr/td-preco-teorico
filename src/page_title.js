@@ -4,7 +4,17 @@
 
 "use strict";
 
-const dom = new TitlePage(document);
-const balancePromise = extractTheoreticalPriceFromTitlePage(document, dom.appendToTableRow.bind(dom));
+async function loadTitle() {
+	const config = await LoadConfig();
+	const logger = new Logger(config);
+	const fetcher = new Fetcher(content, config, logger);
+	const dom = new TitlePage(document, config);
+	const domparser = new DOMParser();
+	const scrapper = new ScrapperTitlePage(document, logger, fetcher, domparser);
 
-dom.appendToTop(balancePromise);
+	const balancePromise = scrapper.scrapTitlePage(dom.appendToTableRow.bind(dom));
+
+	dom.appendToTop(balancePromise);
+}
+
+loadTitle();

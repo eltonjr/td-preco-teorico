@@ -10,8 +10,33 @@
 // boxes: default view now
 const dataSource = "boxes";
 
-const dom = new MainPage(document);
-// TODO implement append function to table
-const rowAppender = dataSource == "cards" ? dom.appendToMainRow.bind(dom) : void(0);
-const balancePromises = extractTheoreticalPriceFromMainPage(document, dataSource, rowAppender);
-dom.appendToTop(balancePromises);
+async function loadMain() {
+	const config = await LoadConfig();
+	const logger = new Logger(config);
+	const fetcher = new Fetcher(content, config, logger);
+	const dom = new MainPage(document, config, logger);
+	const domparser = new DOMParser();
+	const scrapper = new ScrapperMainPage(document, logger, fetcher, domparser);
+
+	// TODO implement append function to boxes
+	const rowAppender = dataSource == "cards" ? dom.appendToMainRow.bind(dom) : void(0);
+	const investments = scrapper.findInvestments();
+	// dom.appendInvestments(investments);
+
+	investments.forEach(inv => {
+		fetcher.get(inv.href)
+			.then(t => {
+				const titleDoc = domparser.parseFromString(t, "text/html");
+				const scrapper = new ScrapperTitlePage(titleDoc, logger, fetcher, domparser);
+				// const investments = scrapper.findInvestments();
+				// console.log(investments);
+				return scrapper.scrapTitlePage(rowAppender, inv.href);
+			})
+			.catch(e => console.error(e));
+	});
+
+	const balancePromises = scrapper.scrapMainPage(rowAppender);
+	dom.appendToTop(balancePromises);
+}
+
+loadMain();
