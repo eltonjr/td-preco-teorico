@@ -8,11 +8,41 @@ class ScrapperTitlePage {
 		this.logger = logger;
 		this.fetcher = fetcher;
 		this.domparser = domparser;
-
-		this.token = ScrapperUtils.getToken(this.document);
 	}
 
-	scrapTitlePage(rowAppender = ScrapperUtils.noop) {
+	findInvestments() {
+		return this.scrapTitleRows();
+	}
+
+	scrapTitleRows() {
+		const rows = this.document.getElementsByClassName("saldo-table-data-values");
+		return Array.from(rows).map(row => {
+			const tds = row.getElementsByTagName("td");
+			const iconTd = Array.from(tds)[0];
+			const anchors = iconTd.getElementsByTagName("a");
+			const iconAnchor = Array.from(anchors)[0];
+			const onclickAction = iconAnchor.getAttribute("onclick");
+			const paramsStr = onclickAction.match(ScrapperUtils.onclickActionGetter);
+			const [
+				CodigoInstituicaoFinanceira,
+				CodigoTitulo,
+				QuatidadeTitulo,
+				MesConsulta,
+				AnoConsulta,
+				TickDataInvestimento
+			] = paramsStr[1].split('|');
+			return {
+				CodigoInstituicaoFinanceira,
+				CodigoTitulo,
+				QuatidadeTitulo,
+				MesConsulta,
+				AnoConsulta,
+				TickDataInvestimento
+			};
+		});
+	}
+
+	scrapTitlePage(rowAppender = ScrapperUtils.noop, referer) {
 		const rows = this.document.getElementsByClassName("saldo-table-data-values");
 		const rowsPromises = Array.from(rows).map(row => {
 			const tds = row.getElementsByTagName("td");
@@ -38,7 +68,7 @@ class ScrapperTitlePage {
 				TickDataInvestimento
 			};
 
-			let res = this.scrapDetailsPage(payload, this.token);
+			let res = this.scrapDetailsPage(payload, referer);
 			rowAppender(row, res);
 			return res;
 		});
@@ -51,8 +81,8 @@ class ScrapperTitlePage {
 	 * This is where the theorecical price really is.
 	 * Currently there is no need for a dedicated scrapper.
 	 */
-	scrapDetailsPage(payload, token) {
-		const response = this.fetcher.getDetails(payload, token);
+	scrapDetailsPage(payload, referer) {
+		const response = this.fetcher.getDetails(payload, referer);
 		return response
 			.then(o => this.scrapDetailsResponse(o));
 	}

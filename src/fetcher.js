@@ -17,7 +17,7 @@ class Fetcher {
 		}
 
 		const promise = this.content.fetch(url, {
-			credentials: "same-origin",
+			credentials: "include",
 			redirect: 'follow'
 		});
 
@@ -30,7 +30,7 @@ class Fetcher {
 			});
 	}
 
-	getDetails(payload, token) {
+	getDetails(payload, referer) {
 		const key = this.buildDetailsKey(payload);
 		const cached = this.cache.get(key);
 		if (cached) {
@@ -40,12 +40,15 @@ class Fetcher {
 
 		const promise = this.content.fetch("/MeusInvestimentos/LoadDetalhe", {
 			method: "POST",
-			credentials: "same-origin",
+			credentials: "include",
 			body: JSON.stringify(payload),
 			redirect: 'follow',
+			referrer: referer,
 			headers: {
 				"Content-Type": "application/json; charset=utf-8",
-				"__RequestVerificationToken": token
+				"Accept": "application/json, text/javascript, */*; q=0.01",
+				"X-Requested-With": "XMLHttpRequest",
+				"Priority": "u=0"
 			}
 		});
 

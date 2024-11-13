@@ -12,23 +12,14 @@
 		this.titleScrapper = new ScrapperTitlePage(doc, logger, fetcher, domparser);
 	}
 
-	scrapMainPage(rowAppender = ScrapperUtils.noop) {
+	findInvestments() {
 		const rowsData = this.scrapMainRows();
-		Object.keys(rowsData).forEach(href => {
-			let res = this.fetcher.get(href)
-				.then(t => {
-					const titleDoc = this.domparser.parseFromString(t, "text/html");
-					const scrapper = new ScrapperTitlePage(titleDoc, this.logger, this.fetcher, this.domparser);
-					return scrapper.scrapTitlePage();
-				})
-				.catch(e => console.error(e));
-
-			rowsData[href].promise = res;
-
-			rowsData[href].elems.forEach(row => rowAppender(row, res));
+		return Object.keys(rowsData).map(href => {
+			return {
+				href: href,
+				title: rowsData[href].title
+			};
 		});
-
-		return Object.values(rowsData);
 	}
 
 	scrapMainRows() {
@@ -46,5 +37,25 @@
 				// rowsData[href].elems.push(row);
 			});
 		return rowsData;
+	}
+
+
+	scrapMainPage(rowAppender = ScrapperUtils.noop) {
+		const rowsData = this.scrapMainRows();
+		Object.keys(rowsData).forEach(href => {
+			let res = this.fetcher.get(href)
+				.then(t => {
+					const titleDoc = this.domparser.parseFromString(t, "text/html");
+					const scrapper = new ScrapperTitlePage(titleDoc, this.logger, this.fetcher, this.domparser);
+					return scrapper.scrapTitlePage();
+				})
+				.catch(e => console.error(e));
+
+			rowsData[href].promise = res;
+
+			rowsData[href].elems.forEach(row => rowAppender(row, res));
+		});
+
+		return Object.values(rowsData);
 	}
 }

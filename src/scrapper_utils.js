@@ -18,8 +18,6 @@ const ScrapperUtils = {
 
 	trimTitle: t => t.split("\n").map(s => s.trim()).filter(s => s).join(" "),
 
-	getToken: doc => doc.querySelector("form#__AjaxAntiForgeryForm input").value,
-
 	onclickActionGetter: new RegExp("[a-zA-Z]+\\('(.*)'\\);"),
 
 	noop: _ => { }

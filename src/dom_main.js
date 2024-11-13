@@ -41,8 +41,57 @@ class MainPage {
 		titleDiv.appendChild(titlePDiv);
 
 		this.doc.querySelector(".fx-column-30").appendChild(titleDiv);
+		this.titleDiv = titleDiv;
 		this.totalValueSpan = totalValue;
 		this.totalValueText = totalValueText;
+		this.investments = {};
+	}
+
+	appendInvestments(investments) {
+		const div = this.doc.createElement("div");
+		div.setAttribute("class", "td-investimentos-charts");
+
+		const ul = this.doc.createElement("ul");
+		ul.setAttribute("class", "td-graph-list");
+		ul.setAttribute("style", "width: 60%; padding: 10px 20px");
+
+		investments.forEach(investment => {
+			const li = this.doc.createElement("li");
+			li.setAttribute("onclick", "event.preventDefault();");
+			const span1 = this.doc.createElement("span");
+			span1.setAttribute("class", "td-graph-list__item");
+
+			const span2 = this.doc.createElement("span");
+			span2.setAttribute("class", "td-graph-list__icon");
+			span2.setAttribute("style", `background-color:${color(investment.title)};`);
+
+			const titleNameSpan = this.doc.createElement("span");
+			titleNameSpan.setAttribute("style", "font-size: 1.6rem;");
+			const titleName = this.doc.createTextNode(investment.title);
+			titleNameSpan.appendChild(titleName);
+
+			const span3 = this.doc.createElement("span");
+			span3.setAttribute("style", "letter-spacing: -0.56px; text-align: right; margin-left: auto; position: relative;font-size: 1.8rem;font-weight: 600;");
+			span3.setAttribute("data-gross-amount", labels.processing);
+			const titleValue = this.doc.createTextNode(labels.processing);
+			span3.appendChild(titleValue);
+
+			span1.appendChild(span2);
+			span1.appendChild(titleNameSpan);
+			span1.appendChild(span3);
+
+			li.appendChild(span1);
+			ul.appendChild(li);
+
+			this.investments[investment.href] = {
+				li: li,
+				valueSpan: span3,
+				valueText: titleValue
+			};
+		});
+
+		div.appendChild(ul);
+		this.titleDiv.appendChild(div);
 	}
 
 	/**
