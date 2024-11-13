@@ -3,7 +3,7 @@
     $('#combo-tipo-operacao').on('change', function () {
         carregarListaUltimasOperacoes()
     });
-
+   
     carregarListaUltimasOperacoes();
 }
 

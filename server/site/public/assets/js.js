@@ -21,63 +21,64 @@
 (218,14-15): run-time error JS1014: Invalid character: #
 (222,11): run-time error JS1004: Expected ';'
 (224,14-15): run-time error JS1014: Invalid character: #
-(225,14-15): run-time error JS1014: Invalid character: #
-(226,14-15): run-time error JS1014: Invalid character: #
-(227,14-15): run-time error JS1014: Invalid character: #
-(228,14-15): run-time error JS1014: Invalid character: #
-(229,14-15): run-time error JS1014: Invalid character: #
+(226,18-19): run-time error JS1014: Invalid character: #
+(230,14-15): run-time error JS1014: Invalid character: #
 (231,14-15): run-time error JS1014: Invalid character: #
-(231,67-68): run-time error JS1014: Invalid character: #
 (232,14-15): run-time error JS1014: Invalid character: #
-(232,70-71): run-time error JS1014: Invalid character: #
 (233,14-15): run-time error JS1014: Invalid character: #
-(233,69-70): run-time error JS1014: Invalid character: #
-(238,1-13): run-time error JS1010: Expected identifier: 'use strict'
-(238,13-14): run-time error JS1005: Expected '(': ;
-(238,13-14): run-time error JS1008: Expected '{': ;
-(1481,14-15): run-time error JS1014: Invalid character: #
+(234,14-15): run-time error JS1014: Invalid character: #
+(236,14-15): run-time error JS1014: Invalid character: #
+(236,67-68): run-time error JS1014: Invalid character: #
+(237,14-15): run-time error JS1014: Invalid character: #
+(237,70-71): run-time error JS1014: Invalid character: #
+(238,14-15): run-time error JS1014: Invalid character: #
+(238,69-70): run-time error JS1014: Invalid character: #
+(243,1-13): run-time error JS1010: Expected identifier: 'use strict'
+(243,13-14): run-time error JS1005: Expected '(': ;
+(243,13-14): run-time error JS1008: Expected '{': ;
 (1482,14-15): run-time error JS1014: Invalid character: #
 (1483,14-15): run-time error JS1014: Invalid character: #
 (1484,14-15): run-time error JS1014: Invalid character: #
-(1487,18-19): run-time error JS1014: Invalid character: #
-(1491,5-6): run-time error JS1014: Invalid character: #
-(1492,47-48): run-time error JS1014: Invalid character: #
-(1495,5-6): run-time error JS1014: Invalid character: #
-(1503,5-6): run-time error JS1014: Invalid character: #
-(1504,14-15): run-time error JS1014: Invalid character: #
-(1504,55-56): run-time error JS1014: Invalid character: #
+(1485,14-15): run-time error JS1014: Invalid character: #
+(1488,18-19): run-time error JS1014: Invalid character: #
+(1492,5-6): run-time error JS1014: Invalid character: #
+(1493,47-48): run-time error JS1014: Invalid character: #
+(1496,5-6): run-time error JS1014: Invalid character: #
+(1504,5-6): run-time error JS1014: Invalid character: #
 (1505,14-15): run-time error JS1014: Invalid character: #
-(1505,49-50): run-time error JS1014: Invalid character: #
-(1508,5-6): run-time error JS1014: Invalid character: #
-(1519,5-6): run-time error JS1014: Invalid character: #
-(1523,5-6): run-time error JS1014: Invalid character: #
-(1525,14-15): run-time error JS1014: Invalid character: #
+(1505,55-56): run-time error JS1014: Invalid character: #
+(1506,14-15): run-time error JS1014: Invalid character: #
+(1506,49-50): run-time error JS1014: Invalid character: #
+(1509,5-6): run-time error JS1014: Invalid character: #
+(1520,5-6): run-time error JS1014: Invalid character: #
+(1524,5-6): run-time error JS1014: Invalid character: #
 (1526,14-15): run-time error JS1014: Invalid character: #
 (1527,14-15): run-time error JS1014: Invalid character: #
-(1530,5-6): run-time error JS1014: Invalid character: #
-(1536,5-6): run-time error JS1014: Invalid character: #
-(1537,31-32): run-time error JS1195: Expected expression: .
-(1537,56-57): run-time error JS1003: Expected ':': ;
-(1538,33-34): run-time error JS1195: Expected expression: .
-(1538,58-59): run-time error JS1003: Expected ':': ;
-(1539,39-40): run-time error JS1195: Expected expression: .
-(1539,67-68): run-time error JS1003: Expected ':': ;
-(1540,43-44): run-time error JS1195: Expected expression: .
-(1540,71-72): run-time error JS1003: Expected ':': ;
-(1542,46-47): run-time error JS1014: Invalid character: #
-(1542,82-83): run-time error JS1014: Invalid character: #
-(1550,5-6): run-time error JS1014: Invalid character: #
-(1555,5-6): run-time error JS1014: Invalid character: #
-(1562,5-6): run-time error JS1014: Invalid character: #
-(1563,14-15): run-time error JS1014: Invalid character: #
-(1563,37-38): run-time error JS1014: Invalid character: #
-(1563,100-101): run-time error JS1014: Invalid character: #
-(1566,5-6): run-time error JS1014: Invalid character: #
-(1580,5-6): run-time error JS1014: Invalid character: #
-(1586,5-6): run-time error JS1014: Invalid character: #
-(238,1): run-time error JS1301: End of file encountered before function is properly closed
-(1614,1): run-time error JS1107: Expecting more source characters
-(1614,1): run-time error JS1009: Expected '}'
+(1528,14-15): run-time error JS1014: Invalid character: #
+(1531,5-6): run-time error JS1014: Invalid character: #
+(1537,5-6): run-time error JS1014: Invalid character: #
+(1538,31-32): run-time error JS1195: Expected expression: .
+(1538,56-57): run-time error JS1003: Expected ':': ;
+(1539,33-34): run-time error JS1195: Expected expression: .
+(1539,58-59): run-time error JS1003: Expected ':': ;
+(1540,39-40): run-time error JS1195: Expected expression: .
+(1540,67-68): run-time error JS1003: Expected ':': ;
+(1541,43-44): run-time error JS1195: Expected expression: .
+(1541,71-72): run-time error JS1003: Expected ':': ;
+(1543,46-47): run-time error JS1014: Invalid character: #
+(1543,82-83): run-time error JS1014: Invalid character: #
+(1551,5-6): run-time error JS1014: Invalid character: #
+(1556,5-6): run-time error JS1014: Invalid character: #
+(1563,5-6): run-time error JS1014: Invalid character: #
+(1564,14-15): run-time error JS1014: Invalid character: #
+(1564,37-38): run-time error JS1014: Invalid character: #
+(1564,100-101): run-time error JS1014: Invalid character: #
+(1567,5-6): run-time error JS1014: Invalid character: #
+(1581,5-6): run-time error JS1014: Invalid character: #
+(1587,5-6): run-time error JS1014: Invalid character: #
+(243,1): run-time error JS1301: End of file encountered before function is properly closed
+(1615,1): run-time error JS1107: Expecting more source characters
+(1615,1): run-time error JS1009: Expected '}'
 (197,6-27): run-time error JS1300: Strict-mode does not allow assignment to undefined variables: menuMobileClosedClass
  */
 function validaData(data, format = "dd/MM/yyyy") {
@@ -303,8 +304,13 @@ class TesouroMenuHambuguerMobile {
 
     Init() {
 
-        this.#btnMenuTrigger = document.querySelector('button.td-menu-trigger');
         this.#tdMenuMobile = document.querySelector('div.td-menu-mobile');
+
+        if (this.#tdMenuMobile == undefined) {
+            return;
+        }
+
+        this.#btnMenuTrigger = document.querySelector('button.td-menu-trigger');
         this.#tdMenuMobileClose = document.querySelector('div.td-menu-mobile__close');
         this.#tdMenuMobilePerfilSeta = document.querySelector('div.td-menu-mobile__item__seta__perfil');
         this.#tdMenuMobilePerfilItens = document.querySelector('div.td-menu-mobile__collapsable');
@@ -1200,16 +1206,12 @@ $(function () {
 function gravaCookieOlho(visualizar) {
 
     var url = "/MeusInvestimentos/GravaCookieOlho";
-    var token = getToken();
 
     $.ajax({
         dataType: "json",
         type: "POST",
         url: url,
-        data: { visualiza: visualizar },
-        headers: {
-            "__RequestVerificationToken": token
-        }
+        data: { visualiza: visualizar }
     });
 }
 

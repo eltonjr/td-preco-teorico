@@ -30,7 +30,7 @@ const titulosCores = [
 ];
 
 const initPositionSummaryChart = () => {
-
+   
     const corretoraSelecioanda = $('#corretora-selecionada');
 
     if (corretoraSelecioanda) {
@@ -113,7 +113,7 @@ const htmlLegendPlugin = {
 
             li.onclick = () => {
                 let {type} = chart.config;
-                if (type === 'pie' || type === 'doughnut' || type === 'RoundedDoughnut') {
+                if (type === 'pie' || type === 'doughnut' || type === 'RoundedDoughnut') {                   
                     chart.getDatasetMeta(0).data[item.index].hidden = !chart.getDatasetMeta(0).data[item.index].hidden;
                 } else {
                     chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
@@ -121,7 +121,7 @@ const htmlLegendPlugin = {
                 chart.update();
                 calculaValorTotalGrafico();
            };
-
+            
             const boxSpan = document.createElement('span');
             boxSpan.style.background = item.fillStyle;
             boxSpan.style.borderColor = item.strokeStyle;
@@ -141,14 +141,14 @@ const htmlLegendPlugin = {
             const text = document.createTextNode(item.label);
             textContainer.appendChild(text);
 
-            //
+            //  
             const textPorcentagem = document.createElement('p');
             textPorcentagem.className = "p__porcentagem";
 
             textPorcentagem.style.background = item.fillStyle;
             textPorcentagem.style.borderColor = item.strokeStyle;
             textPorcentagem.style.color = item.fontColor;
-
+           
 
             const textPer = document.createTextNode(item.text + " %");
             textPorcentagem.appendChild(textPer);
@@ -158,7 +158,7 @@ const htmlLegendPlugin = {
             const spanPorcentagem = document.createElement("span");
 
             spanPorcentagem.style.display = "flex";
-
+          
             spanPorcentagem.appendChild(textPorcentagem);
 
             divSuperior.className = "custom-legend__header";
@@ -204,15 +204,15 @@ function calculaValorTotalGrafico() {
 //    });
 
 // GRAFICO DA PAGINA INICIAL ACOMPANHAR
-//if ($('#summaryChart').length) {
+//if ($('#summaryChart').length) {   
 //    carregarDadosGraficoPositionSummary();
 //}
 
 
 
-function geraGraficoPosicaoSumarizada() {
+function geraGraficoPosicaoSumarizada() { 
 
-    let titulosNomes = [];
+    let titulosNomes = [];   
     let cores = [];
     let data = [];
     for (let filter in positionSummary.summary) {
@@ -221,7 +221,7 @@ function geraGraficoPosicaoSumarizada() {
         cores.push(corTitulo?.cor ?? Roxo);
         data.push(positionSummary.summary[filter].summaryGroupPercentage);
     }
-
+        
 
     let config = {
         type: 'doughnut',
@@ -238,7 +238,7 @@ function geraGraficoPosicaoSumarizada() {
                 borderColor: "#FFF",
                 borderWidth: 1
             }]
-        },
+        },        
         options: {
             responsive: true,
             tooltips: {
@@ -247,7 +247,7 @@ function geraGraficoPosicaoSumarizada() {
             legend: {
                 display: false,
             },
-            plugins: {
+            plugins: {                
                 htmlLegend: {
                     // ID of the container to put the legend in
                     containerID: 'legend-container',
@@ -269,7 +269,7 @@ function geraGraficoPosicaoSumarizada() {
                                     let stroke = custom.borderColor ? custom.borderColor : ds.borderColor[i];
                                     let bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, undefined, i);
                                     return {
-                                        // And finally :
+                                        // And finally : 
                                         text: ds.data[i],
                                         label,
                                         fillStyle: fill,
@@ -288,7 +288,7 @@ function geraGraficoPosicaoSumarizada() {
                     enabled: false
                 }
             },
-            cutout: "85%",
+            cutout: "85%",           
             title: {
                 display: false,
                 text: 'Chart.js Doughnut Chart'

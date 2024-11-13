@@ -21,8 +21,8 @@
 (466,1-9): run-time error JS1010: Expected identifier: function
 (483,23-24): run-time error JS1008: Expected '{': ;
 (483,1): run-time error JS1301: End of file encountered before function is properly closed
-(717,1): run-time error JS1107: Expecting more source characters
-(717,1): run-time error JS1009: Expected '}'
+(696,1): run-time error JS1107: Expecting more source characters
+(696,1): run-time error JS1009: Expected '}'
 (311,5-14): run-time error JS1300: Strict-mode does not allow assignment to undefined variables: _avaiable
 (375,21-26): run-time error JS1300: Strict-mode does not allow assignment to undefined variables: title
 (375,33-44): run-time error JS1300: Strict-mode does not allow assignment to undefined variables: description
@@ -595,14 +595,6 @@ function progressBarMove() {
 }
 
 progressBarMove();;
-function getToken() {
-
-    let form = $('#__AjaxAntiForgeryForm');
-    let token = $('input[name="__RequestVerificationToken"]', form).val();
-
-    return token;
-}
-
 $.ajaxSetup({
     cache: false,
     statusCode: {
@@ -661,10 +653,7 @@ function TesouroAjaxRequests() {
             success: success,
             error: error,
             complete: complete,
-            contentType: "application/json",
-            headers: {
-                "__RequestVerificationToken": getToken()
-            }
+            contentType: "application/json"
         });
 
     }
@@ -675,10 +664,6 @@ function TesouroAjaxRequests() {
 
         if (isAsync == null) {
             isAsync = true;
-        }
-
-        if (data.__RequestVerificationToken == null) {
-            data.__RequestVerificationToken = $("input[type='hidden'][name='__RequestVerificationToken']")[0].value;
         }
 
         $.ajax({
@@ -707,9 +692,6 @@ function TesouroAjaxRequests() {
             type: "GET",
             async: isAsync,
             url: url,
-            headers: {
-                "__RequestVerificationToken": getToken()
-            },
             beforeSend: beforeSend,
             success: success,
             error: error,
@@ -736,10 +718,7 @@ function TesouroAjaxRequests() {
             success: success,
             error: error,
             complete: complete,
-            contentType: "application/json",
-            headers: {
-                "__RequestVerificationToken": getToken()
-            }
+            contentType: "application/json"
         });
 
     }
