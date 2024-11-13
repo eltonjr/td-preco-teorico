@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Tesouro Direto - Preço teórico (beta)",
+  "name": "Tesouro Direto - Preço teórico",
   "version": "3.1.0",
   "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
   "icons": {
@@ -60,7 +60,7 @@
   "options_ui": {
     "page": "src/options/options.html"
   },
-    "devtools_page": "src/devtools/devtools.html",
+  "devtools_page": "src/devtools/devtools.html",
   "permissions": [
     "storage"
   ],
