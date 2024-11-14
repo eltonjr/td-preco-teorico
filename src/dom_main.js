@@ -179,6 +179,9 @@ class MainPage {
 				Promise.all(tpf).then(v => {
 					setTimeout(() => {
 						const sum = sumArray(v);
+						if (isNaN(sum)) {
+							sum = `${labels.partial}: ${sumArrayValids(v)} (${labels.error}: ${countInvalids(v)})`;
+						}
 						this.logger.log(`Contribs resolved: ${title}: ${v.length}`);
 						span3.setAttribute("data-gross-amount", sum);
 						span3.innerHTML = "";
@@ -196,7 +199,7 @@ class MainPage {
 			Promise.all(v.flat()).then(vv => {
 				let sum = sumArray(vv);
 				if (isNaN(sum)) {
-					sum = `${labels.partial}: ${sumArrayValids(vv)}`;
+					sum = `${labels.partial}: ${sumArrayValids(vv)} (${labels.error}: ${countInvalids(vv)})`;
 				}
 				this.totalValueSpan.setAttribute("data-gross-amount", sum);
 				this.totalValueSpan.innerHTML = "";
