@@ -7,8 +7,7 @@
 
 	<body>
 		<form>
-			<p>Escolha como os valores teóricos devem ser exibidos:</p>
-
+			<p>Como os valores teóricos devem ser exibidos:</p>
 			<p>
 				<div>
 					<input type="radio" id="br" name="formatter" value="br" checked>
@@ -23,6 +22,19 @@
 				<div>
 					<input type="radio" id="noop" name="formatter" value="noop">
 					<label for="noop">Não formatar nenhum valor (ex: 1234.56)</label>
+				</div>
+			</p>
+
+			<p>Em caso de falha:</p>
+			<p>
+				<div>
+					<input type="radio" id="error" name="onfail" value="error" checked>
+					<label for="error">Exibir mensagem de erro para todo o título (ex: "Falha ao buscar o detalhe do título")</label>
+				</div>
+
+				<div>
+					<input type="radio" id="partial" name="onfail" value="partial">
+					<label for="partial">Exibir valor parcial (ex: "R$ 1.234,56 (parcial)")</label>
 				</div>
 			</p>
 
