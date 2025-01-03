@@ -21,77 +21,101 @@ class MainPage {
 		this.logger = logger;
 		this.logger.log("MainPage loaded");
 
-		const titleDiv = this.doc.createElement("div");
-		titleDiv.setAttribute("id", "td-preco-teorico");
-		titleDiv.setAttribute("class", "lembrete-investimento-box");
-		const title = this.doc.createElement("h4");
-		title.setAttribute("class", "titulo-card");
-		title.appendChild(this.doc.createTextNode(labels.theoreticalTotalValue));
-		const titlePDiv = this.doc.createElement("div");
-		titlePDiv.setAttribute("class", "td-meus-investimentos__valor-box");
-		const totalValue = this.doc.createElement("span");
-		totalValue.setAttribute("class", "td-meus-investimentos__valor");
-		totalValue.setAttribute("data-gross-amount", labels.processing);
-		const totalValueText = this.doc.createTextNode(labels.processing);
-		totalValue.appendChild(totalValueText);
-
-		titlePDiv.appendChild(totalValue);
-
-		titleDiv.appendChild(title);
-		titleDiv.appendChild(titlePDiv);
-
-		this.doc.querySelector(".fx-column-30").appendChild(titleDiv);
-		this.titleDiv = titleDiv;
-		this.totalValueSpan = totalValue;
-		this.totalValueText = totalValueText;
+		const html = `
+			<div id="td-preco-teorico" class="lembrete-investimento-box">
+				<h4 class="titulo-card">${labels.theoreticalTotalValue}</h4>
+				<div id="error-area" class="td-meus-investimentos">
+					<span class="td-meus-investimentos"></span>
+				</div>
+				<div class="td-meus-investimentos__valor-box">
+					<span class="td-meus-investimentos__valor">
+						${labels.processing}
+					</span>
+				</div>
+			</div>
+		`;
+		this.doc.querySelector(".fx-column-30").insertAdjacentHTML('beforeend', html);
+		this.titleDiv = this.doc.querySelector("#td-preco-teorico");
+		this.totalValueSpan = this.titleDiv.querySelector(".td-meus-investimentos__valor");
+		this.totalValueText = this.totalValueSpan.firstChild;
+		this.errorAreaText = this.titleDiv.querySelector("#error-area").firstChild;
 		this.investments = {};
 	}
 
 	appendInvestments(investments) {
-		const div = this.doc.createElement("div");
-		div.setAttribute("class", "td-investimentos-charts");
-
-		const ul = this.doc.createElement("ul");
-		ul.setAttribute("class", "td-graph-list");
-		ul.setAttribute("style", "width: 60%; padding: 10px 20px");
+		const html = `
+			<div class="td-investimentos-charts">
+				<ul class="td-graph-list" style="width: 60%; padding: 10px 20px">
+					${investments.map(investment => `
+						<li id="${titleId(investment.title)}" onclick="event.preventDefault();">
+							<span class="td-graph-list__item">
+								<span class="td-graph-list__icon" style="background-color:${color(investment.title)};"></span>
+								<span style="font-size: 1.6rem;">${investment.title}</span>
+								<span style="letter-spacing: -0.56px; text-align: right; margin-left: auto; position: relative;font-size: 1.8rem;font-weight: 600;" data-gross-amount="${labels.processing}">
+									${labels.processing}
+								</span>
+								<div class="progress-bar" style="width: 10rem; height: 1rem; margin-left: 0.5rem; border-style: solid; border-width: 2px; border-radius: 1rem; border-color: ${color(investment.title)}">
+									<div class="progress-bar-fill" style="background-color:${color(investment.title)}; width: 0%; height: 100%;"></div>
+								</div>
+							</span>
+						</li>
+					`).join('')}
+				</ul>
+			</div>
+		`;
+		this.titleDiv.insertAdjacentHTML('beforeend', html);
 
 		investments.forEach(investment => {
-			const li = this.doc.createElement("li");
-			li.setAttribute("onclick", "event.preventDefault();");
-			const span1 = this.doc.createElement("span");
-			span1.setAttribute("class", "td-graph-list__item");
-
-			const span2 = this.doc.createElement("span");
-			span2.setAttribute("class", "td-graph-list__icon");
-			span2.setAttribute("style", `background-color:${color(investment.title)};`);
-
-			const titleNameSpan = this.doc.createElement("span");
-			titleNameSpan.setAttribute("style", "font-size: 1.6rem;");
-			const titleName = this.doc.createTextNode(investment.title);
-			titleNameSpan.appendChild(titleName);
-
-			const span3 = this.doc.createElement("span");
-			span3.setAttribute("style", "letter-spacing: -0.56px; text-align: right; margin-left: auto; position: relative;font-size: 1.8rem;font-weight: 600;");
-			span3.setAttribute("data-gross-amount", labels.processing);
-			const titleValue = this.doc.createTextNode(labels.processing);
-			span3.appendChild(titleValue);
-
-			span1.appendChild(span2);
-			span1.appendChild(titleNameSpan);
-			span1.appendChild(span3);
-
-			li.appendChild(span1);
-			ul.appendChild(li);
-
+			const li = this.titleDiv.querySelector(`#${titleId(investment.title)}`);
+			const span3 = li.querySelector('span span:last-of-type');
 			this.investments[investment.href] = {
 				li: li,
 				valueSpan: span3,
-				valueText: titleValue
+				valueText: span3.firstChild
 			};
 		});
+	};
 
-		div.appendChild(ul);
-		this.titleDiv.appendChild(div);
+	setTotalInvesmentsQuantity(href, quantity) {
+		this.investments[href].quantity = quantity;
+		this.investments[href].completed = 0;
+	};
+
+	updateProgress(href, progress) {
+		this.investments[href].completed += progress;
+
+		const percentage = (this.investments[href].completed / this.investments[href].quantity) * 100;
+		const progressBar = this.investments[href].li.querySelector('.progress-bar-fill');
+		progressBar.style.width = `${percentage}%`;
+
+		if (this.investments[href].completed === this.investments[href].quantity) {
+			const progressBar = this.investments[href].li.querySelector('.progress-bar');
+			progressBar.remove();
+		}
+	}
+
+	updateValue(href, values) {
+		var sum = sumArray(values);
+		if (isNaN(sum)) {
+			sum = `${labels.partial}: ${sumArrayValids(values)}`;
+			if (this.debug) {
+				sum += ` (${labels.error}: ${countInvalids(values)})`
+			}
+		}
+
+		this.investments[href].valueText.textContent = this.formatter.format(sum);
+	}
+
+	updateTotal(values) {
+		let sum = sumArray(values);
+		if (isNaN(sum)) {
+			sum = `${labels.partial}: ${sumArrayValids(values)}`;
+			if (this.debug) {
+				sum += ` (${labels.error}: ${countInvalids(values)})`
+			}
+			this.errorAreaText.textContent = labels.errorsMessage;
+		}
+		this.totalValueText.textContent = this.formatter.format(sum);
 	}
 
 	/**
@@ -136,7 +160,6 @@ class MainPage {
 
 			const span3 = this.doc.createElement("span");
 			span3.setAttribute("style", "letter-spacing: -0.56px; text-align: right; margin-left: auto; position: relative;font-size: 1.8rem;font-weight: 600;");
-			span3.setAttribute("data-gross-amount", labels.processing);
 			const titleValue = this.doc.createTextNode(labels.processing);
 			span3.appendChild(titleValue);
 
@@ -178,14 +201,11 @@ class MainPage {
 
 				Promise.all(tpf).then(v => {
 					setTimeout(() => {
-						const sum = sumArray(v);
+						let sum = sumArray(v);
 						if (isNaN(sum)) {
 							sum = `${labels.partial}: ${sumArrayValids(v)} (${labels.error}: ${countInvalids(v)})`;
 						}
 						this.logger.log(`Contribs resolved: ${title}: ${v.length}`);
-						span3.setAttribute("data-gross-amount", sum);
-						span3.innerHTML = "";
-						span3.appendChild(titleValue);
 						titleValue.textContent = this.formatter.format(sum);
 					}, 500);
 				});
@@ -201,9 +221,6 @@ class MainPage {
 				if (isNaN(sum)) {
 					sum = `${labels.partial}: ${sumArrayValids(vv)} (${labels.error}: ${countInvalids(vv)})`;
 				}
-				this.totalValueSpan.setAttribute("data-gross-amount", sum);
-				this.totalValueSpan.innerHTML = "";
-				this.totalValueSpan.appendChild(this.totalValueText);
 				this.totalValueText.textContent = this.formatter.format(sum);
 			})
 		});

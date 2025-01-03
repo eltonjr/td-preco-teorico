@@ -7,8 +7,9 @@ const labels = {
 	theoreticalBruteValue: "Valor teórico bruto",
 	theoreticalValue: "Valor teórico",
 	theoreticalTotalValue: "Valor teórico total",
-	error: "Erro",
-	partial: "Resultado parcial"
+	error: "Erros",
+	partial: "Valor parcial",
+	errorsMessage: "Algumas informações estão indisponíveis no portal do Tesouro Direto",
 };
 
 // taken from TesouroDireto source code
@@ -26,6 +27,15 @@ const color = title => {
 	} else { // novelty color used in newly created column
 		return "#abfabf";
 	}
+};
+
+const titleId = title => {
+	return title
+		.toLowerCase()
+		.replace(/ /g, '_')
+		.replace(/\(/g, '')
+		.replace(/\)/g, '')
+		.replace(/\+/g, '');
 };
 
 class Formatter {
