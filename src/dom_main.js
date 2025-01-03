@@ -14,11 +14,12 @@ class MainPage {
 	 *
 	 * @param {HTMLDocument} doc the page where dom elements will be inserted into
 	 */
-	constructor(doc, cfg, logger) {
+	constructor(doc, cfg, logger, domparser) {
 		this.doc = doc;
 		this.formatter = new Formatter(cfg.formatter);
 		this.debug = cfg.debug;
 		this.logger = logger;
+		this.domparser = domparser;
 		this.logger.log("MainPage loaded");
 
 		const html = `
@@ -34,7 +35,10 @@ class MainPage {
 				</div>
 			</div>
 		`;
-		this.doc.querySelector(".fx-column-30").insertAdjacentHTML('beforeend', html);
+		const parsed = this.domparser.parseFromString(html, "text/html");
+		const div = parsed.querySelector("#td-preco-teorico");
+
+		this.doc.querySelector(".fx-column-30").appendChild(div);
 		this.titleDiv = this.doc.querySelector("#td-preco-teorico");
 		this.totalValueSpan = this.titleDiv.querySelector(".td-meus-investimentos__valor");
 		this.totalValueText = this.totalValueSpan.firstChild;
@@ -63,7 +67,10 @@ class MainPage {
 				</ul>
 			</div>
 		`;
-		this.titleDiv.insertAdjacentHTML('beforeend', html);
+		const parsed = this.domparser.parseFromString(html, "text/html");
+		const div = parsed.querySelector(".td-investimentos-charts");
+		this.titleDiv.appendChild(div);
+		// this.titleDiv.insertAdjacentHTML('beforeend', html);
 
 		investments.forEach(investment => {
 			const li = this.titleDiv.querySelector(`#${titleId(investment.title)}`);
