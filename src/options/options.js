@@ -1,7 +1,7 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
- 
+
 /**
  * logging from this file does not work
  */
@@ -9,7 +9,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 	browser = chrome;
 	const allowBrowserFormatter = !!navigator.language;
-	browser.storage.sync.get("formatter", data => {
+	browser.storage.local.get("formatter", data => {
 		const rs = document.querySelectorAll('input[name="formatter"]');
 		for (const r of rs) {
 			if (r.value === data.formatter) {
@@ -32,7 +32,7 @@ document.querySelector("form").addEventListener("submit", evt => {
 			break;
 		}
 	}
-	browser.storage.sync.set({
+	browser.storage.local.set({
 		formatter: selected
 	});
 
