@@ -21,16 +21,12 @@ class ScrapperTitlePage {
 			const iconTd = Array.from(tds)[0];
 			const anchors = iconTd.getElementsByTagName("a");
 			const iconAnchor = Array.from(anchors)[0];
-			const onclickAction = iconAnchor.getAttribute("onclick");
-			const paramsStr = onclickAction.match(ScrapperUtils.onclickActionGetter);
-			const [
-				CodigoInstituicaoFinanceira,
-				CodigoTitulo,
-				QuatidadeTitulo,
-				MesConsulta,
-				AnoConsulta,
-				TickDataInvestimento
-			] = paramsStr[1].split('|');
+			const CodigoInstituicaoFinanceira = iconAnchor.getAttribute("data-partyid");
+			const CodigoTitulo = iconAnchor.getAttribute("data-bondid");
+			const QuatidadeTitulo = iconAnchor.getAttribute("data-bondquantity");
+			const MesConsulta = iconAnchor.getAttribute("data-month");
+			const AnoConsulta = iconAnchor.getAttribute("data-year");
+			const TickDataInvestimento = iconAnchor.getAttribute("data-ticks");
 			return {
 				CodigoInstituicaoFinanceira,
 				CodigoTitulo,
@@ -49,16 +45,12 @@ class ScrapperTitlePage {
 			const iconTd = Array.from(tds)[0];
 			const anchors = iconTd.getElementsByTagName("a");
 			const iconAnchor = Array.from(anchors)[0];
-			const onclickAction = iconAnchor.getAttribute("onclick");
-			const paramsStr = onclickAction.match(ScrapperUtils.onclickActionGetter);
-			const [
-				CodigoInstituicaoFinanceira,
-				CodigoTitulo,
-				QuatidadeTitulo,
-				MesConsulta,
-				AnoConsulta,
-				TickDataInvestimento
-			] = paramsStr[1].split('|');
+			const CodigoInstituicaoFinanceira = iconAnchor.getAttribute("data-partyid");
+			const CodigoTitulo = iconAnchor.getAttribute("data-bondid");
+			const QuatidadeTitulo = iconAnchor.getAttribute("data-bondquantity");
+			const MesConsulta = iconAnchor.getAttribute("data-month");
+			const AnoConsulta = iconAnchor.getAttribute("data-year");
+			const TickDataInvestimento = iconAnchor.getAttribute("data-ticks");
 			const payload = {
 				CodigoInstituicaoFinanceira,
 				CodigoTitulo,
