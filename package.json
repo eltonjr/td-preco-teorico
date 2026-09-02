@@ -1,6 +1,6 @@
 {
   "name": "td-preco-teorico",
-  "version": "3.2.0-beta",
+  "version": "3.2.0",
   "description": "Exibe o preço teórico de um investimento no Tesouro Direto",
   "main": "theoretical.js",
   "author": "eltonhnjr@gmail.com",
