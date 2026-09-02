@@ -13,12 +13,6 @@ class Fetcher {
 	}
 
 	get(url, retries = 0) {
-		const cached = this.cache.get(url);
-		if (cached) {
-			this.logger.log(`get ${url}: cached`);
-			return Promise.resolve(cached);
-		}
-
 		return this.content.fetch(url, {
 			credentials: "include",
 			redirect: 'follow'
