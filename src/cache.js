@@ -18,6 +18,8 @@ class Cache {
 		this.key = "td-preco-teorico:cache";
 		this.logger = logger;
 		this.cache = {};
+		this.debounced = null;
+		this.delay = 500; // 500ms
 	}
 
 	init() {
@@ -53,12 +55,19 @@ class Cache {
 	}
 
 	persist() {
-		return browser.storage.local.set({
-			[this.key]: this.cache
+		this.debounce(() => {
+			return browser.storage.local.set({
+				[this.key]: this.cache
+			})
+			.catch(() => {
+				this.logger.log("Cache storage persistence failed");
+			});
 		})
-		.catch(() => {
-			this.logger.log("Cache storage persistence failed");
-		});
+	}
+
+	debounce(fn) {
+		clearTimeout(this.debounced);
+		this.debounced = setTimeout(fn, this.delay);
 	}
 }
 
