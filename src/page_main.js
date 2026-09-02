@@ -16,7 +16,8 @@ const algorithm = "bfs";
 async function loadMain() {
 	const config = await LoadConfig();
 	const logger = new Logger(config);
-	const fetcher = new Fetcher(content, config, logger);
+	const cache = await NewCache(config, logger);
+	const fetcher = new Fetcher(content, cache, logger);
 	const domparser = new DOMParser();
 	const dom = new MainPage(document, config, logger, domparser);
 	const scrapper = new ScrapperMainPage(document, logger, fetcher, domparser);

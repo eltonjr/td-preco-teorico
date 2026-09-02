@@ -7,7 +7,8 @@
 async function loadTitle() {
 	const config = await LoadConfig();
 	const logger = new Logger(config);
-	const fetcher = new Fetcher(content, config, logger);
+	const cache = await NewCache(config, logger);
+	const fetcher = new Fetcher(content, cache, logger);
 	const dom = new TitlePage(document, config);
 	const domparser = new DOMParser();
 	const scrapper = new ScrapperTitlePage(document, logger, fetcher, domparser);

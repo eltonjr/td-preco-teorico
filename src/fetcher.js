@@ -3,9 +3,9 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 class Fetcher {
-	constructor(content, cfg, logger) {
+	constructor(content, cache, logger) {
 		this.content = content;
-		this.cache = NewCache(cfg);
+		this.cache = cache;
 		this.logger = logger;
 
 		this.maxRetries = 4;
