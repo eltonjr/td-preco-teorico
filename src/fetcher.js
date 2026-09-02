@@ -62,20 +62,29 @@ class Fetcher {
 		});
 
 		return promise
-			.then(r => r.json())
+			.then(r => {
+				if (!r.ok) {
+					throw new Error(`request failed with status ${r.status}`);
+				}
+
+				return r.json()
+			})
 			.then(r => {
 				if (!r.success) {
-					this.logger.log(`post ${key} error - retries left: ${this.maxRetries - retries}: error: ${r.errorMessage}`);
-					if (retries >= this.maxRetries) {
-						throw new Error(r.errorMessage);
-					}
-
-					return this.wait(this.backoff(retries)).then(() => this.getDetails(payload, referer, retries + 1));
+					throw new Error("invalid json response");
 				}
 
 				this.logger.log(`post ${key}: fetched`);
 				this.cache.set(key, r);
 				return r;
+			})
+			.catch(err => {
+				this.logger.log(`post ${key} error - retries left: ${this.maxRetries - retries}: error: ${err.message}`);
+				if (retries >= this.maxRetries) {
+					throw new Error(err.message);
+				}
+
+				return this.wait(this.backoff(retries)).then(() => this.getDetails(payload, referer, retries + 1));
 			});
 	}
 

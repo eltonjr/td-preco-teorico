@@ -76,7 +76,8 @@ class ScrapperTitlePage {
 	scrapDetailsPage(payload, referer) {
 		const response = this.fetcher.getDetails(payload, referer);
 		return response
-			.then(o => this.scrapDetailsResponse(o));
+			.then(o => this.scrapDetailsResponse(o))
+			.catch(_ => "-");
 	}
 
 	scrapDetailsResponse(res) {
